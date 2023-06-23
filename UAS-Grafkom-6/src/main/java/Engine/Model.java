@@ -45,14 +45,14 @@ public class Model extends Object{
                     x = Float.parseFloat(line.split(" ")[1]);
                     y = Float.parseFloat(line.split(" ")[2]);
                     z = Float.parseFloat(line.split(" ")[3]);
-                    System.out.println("Vertices: "+x+" "+y+" "+z);
+//                    System.out.println("Vertices: "+x+" "+y+" "+z);
                     verticeV.add(new Vector3f(x, y, z));
                 }
                 else if (line.startsWith("vn ")) {
                     x = Float.parseFloat(line.split(" ")[1]);
                     y = Float.parseFloat(line.split(" ")[2]);
                     z = Float.parseFloat(line.split(" ")[3]);
-                    System.out.println("Normals: "+x+" "+y+" "+z);
+//                    System.out.println("Normals: "+x+" "+y+" "+z);
                     normalV.add(new Vector3f(x, y, z));
                 }
                 else if (line.startsWith("vt ")) {
@@ -73,9 +73,9 @@ public class Model extends Object{
                             Float.parseFloat(line.split(" ")[2].split("/")[2]),
                             Float.parseFloat(line.split(" ")[3].split("/")[2]));
                     if(textureV.size() > 0){
-                        Vector3f TextureIndices = new Vector3f(Float.parseFloat(line.split(" ")[1].split("/")[1]),
-                                Float.parseFloat(line.split(" ")[2].split("/")[1]),
-                                Float.parseFloat(line.split(" ")[3].split("/")[1]));
+//                        Vector3f TextureIndices = new Vector3f(Float.parseFloat(line.split(" ")[1].split("/")[1]),
+//                                Float.parseFloat(line.split(" ")[2].split("/")[1]),
+//                                Float.parseFloat(line.split(" ")[3].split("/")[1]));
                         faces.add(new Face(vertexIndices, normalIndices));
                     }
                     faces.add(new Face(vertexIndices, normalIndices));
@@ -89,7 +89,7 @@ public class Model extends Object{
 
         for (Face face: faces ){
             Vector3f n1 = normalV.get((int)face.normal.x - 1);
-            System.out.println(n1);
+//            System.out.println(n1);
             normals.add(n1);
             Vector3f v1 = verticeV.get((int)face.vertex.x - 1);
             vertices.add(v1);
