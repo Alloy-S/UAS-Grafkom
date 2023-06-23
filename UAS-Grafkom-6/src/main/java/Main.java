@@ -1,20 +1,17 @@
-import Engine.*;
 import Engine.Object;
-import org.joml.*;
+import Engine.*;
+import org.joml.Vector2f;
+import org.joml.Vector4f;
 import org.lwjgl.opengl.GL;
 
 import java.io.IOException;
-import java.lang.Math;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.glClearColor;
-import static org.lwjgl.opengl.GL20.GL_FRAGMENT_SHADER;
-import static org.lwjgl.opengl.GL20.GL_VERTEX_SHADER;
-import static org.lwjgl.opengl.GL20.glDisableVertexAttribArray;
-import static org.lwjgl.opengl.GL30.*;
+import static org.lwjgl.opengl.GL20.*;
 
 public class Main {
     private Window window = new Window(1080, 1080, "Hello World");
@@ -236,16 +233,6 @@ public class Main {
                     "resources/model/lamp2_inside.obj"
             ));
 
-        //Full
-//        objectObj.add(new Model(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(1.0f,0.0f,0.0f,1.0f),
-//                "resources/model/full.obj"
-//        ));
 
         objectObj.add(new Model(
                 Arrays.asList(
@@ -253,10 +240,49 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.5f,0.5f,0.0f,1.0f),
-                "resources/model/character.obj"
+                new Vector4f(0.740f, 0.698f, 0.511f,1.0f),
+                "resources/model/char_body.obj"
+        ));
+
+        objectObj.get(18).getChildObject().add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.258f, 0.990f, 0.129f,1.0f),
+                "resources/model/char_green.obj"
+        ));
+        objectObj.get(18).getChildObject().add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.220f, 0.534f, 0.630f,1.0f),
+                "resources/model/char_jeans.obj"
+        ));
+        objectObj.get(18).getChildObject().add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.870f, 0.400f, 0.348f,1.0f),
+                "resources/model/char_mouth.obj"
+        ));
+        objectObj.get(18).getChildObject().add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.880f, 0.809f, 0.801f,1.0f),
+                "resources/model/char_eye.obj"
         ));
     }
+
+
 
     public void input() {
         temp = objectObj.get(0).getCenterPoint();
@@ -290,6 +316,28 @@ public class Main {
 
         if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
             camera.moveDown(move);
+        }
+
+        if (window.isKeyPressed(GLFW_KEY_DOWN)) {
+            objectObj.get(18).translateObject(0f, 0f, -move);
+//            camera.setPosition(temp.get(0), temp.get(1), temp.get(2));
+//            camera.moveBackwards(distance);
+        }
+        if (window.isKeyPressed(GLFW_KEY_RIGHT)) {
+            objectObj.get(18).translateObject(-move, 0f, 0f);
+//            camera.setPosition(temp.get(0), temp.get(1), temp.get(2));
+//            camera.moveBackwards(distance);
+        }
+        if (window.isKeyPressed(GLFW_KEY_UP)) {
+            objectObj.get(18).translateObject(0f, 0f, move);
+//            camera.setPosition(temp.get(0), temp.get(1), temp.get(2));
+//            camera.moveBackwards(distance);
+
+        }
+        if (window.isKeyPressed(GLFW_KEY_LEFT)) {
+            objectObj.get(18).translateObject(move, 0f, 0f);
+//            camera.setPosition(temp.get(0), temp.get(1), temp.get(2));
+//            camera.moveBackwards(distance);
         }
     }
 
