@@ -68,12 +68,11 @@ public class Object extends ShaderProgram{
         _pointLightPositions = new Vector3f[]{
                 new Vector3f(5f, 2f, 5f),
                 new Vector3f(-5f, 2f, 5f),
-                new Vector3f(5f, -2f, -5f),
-                new Vector3f(-5f, 2f, -5f),
-                new Vector3f(0f, 2f, 0f),
+                new Vector3f(5f, 2f, -5f),
+                new Vector3f(-5f, 2f, -5f)
         };
-        lightSwitchDirectionX = new float[]{1f,-1f,1f,-1f,0f};
-        lightSwitchDirectionZ = new float[]{1f,1f,-1f,-1f,0f};
+        lightSwitchDirectionX = new float[]{1f,-1f,1f,-1f};
+        lightSwitchDirectionZ = new float[]{1f,1f,-1f,-1f};
 
         for(int i = 0; i < _pointLightPositions.length; i++){
             uniformsMap.createUniform("pointLight["+i+"].position");
