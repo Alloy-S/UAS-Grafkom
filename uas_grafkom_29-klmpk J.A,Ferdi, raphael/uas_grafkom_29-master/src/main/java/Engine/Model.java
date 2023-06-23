@@ -26,7 +26,7 @@ public class Model extends Object{
     public Model(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, String filename) throws IOException {
         super(shaderModuleDataList, vertices, color);
         normals = new ArrayList<>();
-        faces= new ArrayList<>();
+        faces = new ArrayList<>();
         textures = new ArrayList<>();
         LoadModel(new File(filename));
         setupVAOVBO();
