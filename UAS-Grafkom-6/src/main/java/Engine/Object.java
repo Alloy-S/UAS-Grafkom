@@ -7,6 +7,7 @@ import org.joml.Vector4f;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import static org.lwjgl.opengl.GL15.*;
 import static org.lwjgl.opengl.GL15.GL_STATIC_DRAW;
@@ -40,6 +41,10 @@ public class Object extends ShaderProgram{
         return centerPoint;
     }
 
+    Vector3f[] _pointLightPositions;
+    float[] lightSwitchDirectionX;
+    float[] lightSwitchDirectionZ;
+
     public Object(List<ShaderModuleData> shaderModuleDataList
             , List<Vector3f> vertices
             , Vector4f color) {
@@ -59,7 +64,18 @@ public class Object extends ShaderProgram{
         uniformsMap.createUniform("dirLight.ambient");
         uniformsMap.createUniform("dirLight.diffuse");
         uniformsMap.createUniform("dirLight.specular");
-        for(int i = 0; i < 4; i++){
+
+        _pointLightPositions = new Vector3f[]{
+                new Vector3f(5f, 2f, 5f),
+                new Vector3f(-5f, 2f, 5f),
+                new Vector3f(5f, -2f, -5f),
+                new Vector3f(-5f, 2f, -5f),
+                new Vector3f(0f, 2f, 0f),
+        };
+        lightSwitchDirectionX = new float[]{1f,-1f,1f,-1f,0f};
+        lightSwitchDirectionZ = new float[]{1f,1f,-1f,-1f,0f};
+
+        for(int i = 0; i < _pointLightPositions.length; i++){
             uniformsMap.createUniform("pointLight["+i+"].position");
             uniformsMap.createUniform("pointLight["+i+"].ambient");
             uniformsMap.createUniform("pointLight["+i+"].diffuse");
@@ -117,14 +133,17 @@ public class Object extends ShaderProgram{
         uniformsMap.setUniform("dirLight.diffuse", new Vector3f(0.4f, 0.4f, 0.4f));
         uniformsMap.setUniform("dirLight.specular", new Vector3f(0.5f, 0.5f, 0.5f));
 
-        Vector3f[] _pointLightPositions = {
-                new Vector3f(2f, 2f, 4.3f),
-                new Vector3f(-2f, 2f, 4.3f),
-                new Vector3f(2f, 2, -4.3f),
-                new Vector3f(-2f, 2f, -4.3f),
-        };
-
+        Random random = new Random();
         for(int i = 0; i < _pointLightPositions.length; i++){
+            float dist = (float) Math.sqrt(Math.pow(_pointLightPositions[i].x,2)+Math.pow(_pointLightPositions[i].z,2));
+            if (dist >= 10){
+                lightSwitchDirectionX[i] *= -1;
+                lightSwitchDirectionZ[i] *= -1;
+            }
+            _pointLightPositions[i].x += lightSwitchDirectionX[i]*0.01f*(12-dist);
+            _pointLightPositions[i].z += lightSwitchDirectionZ[i]*0.01f*(12-dist);
+
+
             uniformsMap.setUniform("pointLight["+i+"].position", _pointLightPositions[i]);
             if(scene){
                 uniformsMap.setUniform("pointLight["+i+"].ambient", new Vector3f(0.1f, 0.1f, 0.1f));

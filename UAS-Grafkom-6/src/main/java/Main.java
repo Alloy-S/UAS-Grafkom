@@ -52,7 +52,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(1.0f,0.0f,0.0f,1.0f),
-                "resources/model/full.obj"
+                "resources/model/Ring_Boxing.obj"
         ));
 
         objectObj.add(new Model(
