@@ -45,15 +45,207 @@ public class Main {
         mouseInput = window.getMouseInput();
         camera.setPosition(-1.7f, 1f, 2.5f + distance);
 
+        //Stage outside
         objectObj.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(1.0f,0.0f,0.0f,1.0f),
-                "resources/model/Ring_Boxing.obj"
+                new Vector4f(0.0975f, 0.650f, 0.282f,1.0f),
+                "resources/model/stage_outside.obj"
         ));
+        //Stage inside
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                "resources/model/stage_inside.obj"
+        ));
+        //Ring Side
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.500f, 0.442f, 0.440f,1.0f),
+                "resources/model/ring_side.obj"
+        ));
+
+        //Ring Top
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.970f, 0.979f, 0.980f,1.0f),
+                "resources/model/ring_top.obj"
+        ));
+        //Ring Stair 1
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.430f, 0.434f, 0.434f,1.0f),
+                "resources/model/stair1.obj"
+        ));
+
+        //Ring Stair 2
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.430f, 0.434f, 0.434f,1.0f),
+                "resources/model/stair2.obj"
+        ));
+        //Ring Pole
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.0600f, 0.00780f, 0.00600f,1.0f),
+                "resources/model/ring_pole.obj"
+        ));
+        //Ring Connector
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.430f, 0.434f, 0.434f,1.0f),
+                "resources/model/ring_connector.obj"
+        ));
+        //Ring Cushion
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                "resources/model/ring_connector.obj"
+        ));
+
+        //Ring Net
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.970f, 0.979f, 0.980f,1.0f),
+                "resources/model/ring_net.obj"
+        ));
+
+        //Barrier
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/barier.obj"
+        ));
+
+        //Chair
+            //R
+            objectObj.add(new Model(
+                    Arrays.asList(
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                    ),
+                    new ArrayList<>(),
+                    new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                    "resources/model/chairR.obj"
+            ));
+            //L
+            objectObj.add(new Model(
+                    Arrays.asList(
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                    ),
+                    new ArrayList<>(),
+                    new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                    "resources/model/chairL.obj"
+            ));
+            //F
+            objectObj.add(new Model(
+                    Arrays.asList(
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                    ),
+                    new ArrayList<>(),
+                    new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                    "resources/model/chairF.obj"
+            ));
+
+        //Lamp 1
+            //Outside
+            objectObj.add(new Model(
+                    Arrays.asList(
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                    ),
+                    new ArrayList<>(),
+                    new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                    "resources/model/lamp1_outside.obj"
+            ));
+            //Onside
+            objectObj.add(new Model(
+                    Arrays.asList(
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                    ),
+                    new ArrayList<>(),
+                    new Vector4f(0.970f, 0.979f, 0.980f,1.0f),
+                    "resources/model/lamp1_inside.obj"
+            ));
+
+        //Lamp 2
+            //Outside
+            objectObj.add(new Model(
+                    Arrays.asList(
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                    ),
+                    new ArrayList<>(),
+                    new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                    "resources/model/lamp2_outside.obj"
+            ));
+            //inside
+            objectObj.add(new Model(
+                    Arrays.asList(
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                    ),
+                    new ArrayList<>(),
+                    new Vector4f(0.970f, 0.979f, 0.980f,1.0f),
+                    "resources/model/lamp2_inside.obj"
+            ));
+
+        //Full
+//        objectObj.add(new Model(
+//                Arrays.asList(
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+//                ),
+//                new ArrayList<>(),
+//                new Vector4f(1.0f,0.0f,0.0f,1.0f),
+//                "resources/model/full.obj"
+//        ));
 
         objectObj.add(new Model(
                 Arrays.asList(
