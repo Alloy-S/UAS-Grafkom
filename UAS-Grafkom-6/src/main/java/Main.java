@@ -179,8 +179,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier2.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //3
         barier.add(new Model(
                 Arrays.asList(
@@ -189,8 +190,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier3.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //4
         barier.add(new Model(
                 Arrays.asList(
@@ -199,8 +201,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier4.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //5
         barier.add(new Model(
                 Arrays.asList(
@@ -209,8 +212,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier5.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //6
         barier.add(new Model(
                 Arrays.asList(
@@ -219,9 +223,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier6.obj"
+                "resources/model/Barier/barier.obj"
         ));
-        //7
         barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
@@ -229,8 +232,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier7.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //8
         barier.add(new Model(
                 Arrays.asList(
@@ -239,8 +243,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier8.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //9
         barier.add(new Model(
                 Arrays.asList(
@@ -249,8 +254,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier9.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //10
         barier.add(new Model(
                 Arrays.asList(
@@ -259,8 +265,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier10.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //11
         barier.add(new Model(
                 Arrays.asList(
@@ -269,8 +276,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier11.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //12
         barier.add(new Model(
                 Arrays.asList(
@@ -279,8 +287,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier12.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //13
         barier.add(new Model(
                 Arrays.asList(
@@ -289,8 +298,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier13.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //14
         barier.add(new Model(
                 Arrays.asList(
@@ -299,8 +309,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier14.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //15
         barier.add(new Model(
                 Arrays.asList(
@@ -309,8 +320,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier15.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //16
         barier.add(new Model(
                 Arrays.asList(
@@ -319,8 +331,9 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier16.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //17
         objectObj.add(new Model(
                 Arrays.asList(
