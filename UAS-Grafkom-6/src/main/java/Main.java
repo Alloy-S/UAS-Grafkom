@@ -18,7 +18,8 @@ public class Main {
     private Window window = new Window(1080, 1080, "Hello World");
     ArrayList<Object> objectObj = new ArrayList<>();
     ArrayList<Object> character = new ArrayList<>();
-    ArrayList<Object> objects = new ArrayList<>();
+
+    ArrayList<Object> barier = new ArrayList<>();
     Camera maincamera = new Camera();
     Camera cameraMode0 = new Camera();
     Camera cameraMode1 = new Camera();
@@ -160,17 +161,18 @@ public class Main {
 
         //Barrier
         //1
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier1.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
         //2
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -180,7 +182,7 @@ public class Main {
                 "resources/model/Barier/barier2.obj"
         ));
         //3
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -190,7 +192,7 @@ public class Main {
                 "resources/model/Barier/barier3.obj"
         ));
         //4
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -200,7 +202,7 @@ public class Main {
                 "resources/model/Barier/barier4.obj"
         ));
         //5
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -210,7 +212,7 @@ public class Main {
                 "resources/model/Barier/barier5.obj"
         ));
         //6
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -220,7 +222,7 @@ public class Main {
                 "resources/model/Barier/barier6.obj"
         ));
         //7
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -230,7 +232,7 @@ public class Main {
                 "resources/model/Barier/barier7.obj"
         ));
         //8
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -240,7 +242,7 @@ public class Main {
                 "resources/model/Barier/barier8.obj"
         ));
         //9
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -250,7 +252,7 @@ public class Main {
                 "resources/model/Barier/barier9.obj"
         ));
         //10
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -260,7 +262,7 @@ public class Main {
                 "resources/model/Barier/barier10.obj"
         ));
         //11
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -270,7 +272,7 @@ public class Main {
                 "resources/model/Barier/barier11.obj"
         ));
         //12
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -280,7 +282,7 @@ public class Main {
                 "resources/model/Barier/barier12.obj"
         ));
         //13
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -290,7 +292,7 @@ public class Main {
                 "resources/model/Barier/barier13.obj"
         ));
         //14
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -300,7 +302,7 @@ public class Main {
                 "resources/model/Barier/barier14.obj"
         ));
         //15
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -310,7 +312,7 @@ public class Main {
                 "resources/model/Barier/barier15.obj"
         ));
         //16
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
@@ -721,8 +723,10 @@ public class Main {
 //        Free Cam
         cameraMode2.setRotation(0, 0);
         cameraMode2.setPosition(0f, 5f, 0f);
-        maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
-        maincamera.setPosition(cameraMode0.getPosition().x, cameraMode0.getPosition().y, cameraMode0.getPosition().z);
+        maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
+        maincamera.setPosition(barier.get(0).getCenterPoint().get(0), barier.get(0).getCenterPoint().get(1),barier.get(0).getCenterPoint().get(2));
+
+        System.out.println(barier.get(0).getCenterPoint());
     }
 
 
@@ -755,18 +759,20 @@ public class Main {
 
             }
 
-            switch (cameraMode) {
-                case 0 -> {
-                    maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
-                    maincamera.setPosition(cameraMode0.getPosition().x, cameraMode0.getPosition().y, cameraMode0.getPosition().z);
-                }
-                case 1 -> {
-                    maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
-                    maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
-                }
-                case 2 -> {
-                    maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
-                    maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
+            if (!checkCollision()) {
+                switch (cameraMode) {
+                    case 0 -> {
+                        maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
+                        maincamera.setPosition(cameraMode0.getPosition().x, cameraMode0.getPosition().y, cameraMode0.getPosition().z);
+                    }
+                    case 1 -> {
+                        maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
+                        maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
+                    }
+                    case 2 -> {
+                        maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
+                        maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
+                    }
                 }
             }
         }
@@ -873,6 +879,7 @@ public class Main {
                 cameraMode1.addRotation(0, (float) Math.toRadians(2));
                 cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
             }
+
             switch (cameraMode) {
                 case 0 -> {
                     maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
@@ -887,7 +894,7 @@ public class Main {
                     maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
                 }
             }
-        }
+
 
         if (mouseInput.isLeftButtonPressed()) {
             if (cameraMode >= 2) {
@@ -914,6 +921,8 @@ public class Main {
         if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
             if (cameraMode >= 2) {
                 cameraMode2.moveUp(move);
+                maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
+                maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
             }
 
         }
@@ -921,6 +930,8 @@ public class Main {
         if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
             if (cameraMode >= 2) {
                 cameraMode2.moveDown(move);
+                maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
+                maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
             }
 
         }
@@ -958,7 +969,7 @@ public class Main {
 //            character.get(0).translateObject(-character.get(0).getCenterPoint().get(0), -character.get(0).getCenterPoint().get(1), -character.get(0).getCenterPoint().get(2));
 //            character.get(0).translateObject(maincamera.getPosition().x - TPPOffset.x, maincamera.getPosition().y - TPPOffset.y, maincamera.getPosition().z - TPPOffset.z);
 //            maincamera.moveBackwards(1f);
-//        }
+        }
 
         if (window.getMouseInput().getScroll().y != 0) {
             projection.setFOV(projection.getFOV() - (window.getMouseInput().getScroll().y * 0.01f));
@@ -988,21 +999,22 @@ public class Main {
 ////            camera.setPosition(temp.get(0), temp.get(1), temp.get(2));
 ////            camera.moveBackwards(distance);
 //        }
-        checkCollision();
+//        checkCollision();
     }
 
-    public Boolean checkCollision() {
+    public boolean checkCollision() {
         Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
 
-        for (Object object: objectObj) {
+        for (Object object: barier) {
             Vector3f objPos = new Vector3f(object.getCenterPoint().get(0),object.getCenterPoint().get(1),object.getCenterPoint().get(2));
             float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
-            
+
+            if (distance < 0.9) {
+                return true;
+            }
             System.out.println(objPos + " = " + distance);
         }
-
-
-        return true;
+        return false;
     }
 
     public void loop() {
@@ -1022,6 +1034,10 @@ public class Main {
             }
 
             for (Object object : character) {
+                object.draw(maincamera, projection);
+            }
+
+            for (Object object : barier) {
                 object.draw(maincamera, projection);
             }
 
