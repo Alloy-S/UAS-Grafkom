@@ -62,7 +62,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.0975f, 0.650f, 0.282f, 1.0f),
-                "resources/model/stage_outside.obj"
+                "resources/model/Stage/stage_outside.obj"
         ));
         //Stage inside
         objectObj.add(new Model(
@@ -72,7 +72,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/stage_inside.obj"
+                "resources/model/Stage/stage_inside.obj"
         ));
         //Ring Side
         objectObj.add(new Model(
@@ -82,7 +82,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.500f, 0.442f, 0.440f, 1.0f),
-                "resources/model/ring_side.obj"
+                "resources/model/Ring/ring_side.obj"
         ));
 
         //Ring Top
@@ -93,7 +93,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
-                "resources/model/ring_top.obj"
+                "resources/model/Ring/ring_top.obj"
         ));
         //Ring Stair 1
         objectObj.add(new Model(
@@ -103,7 +103,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
-                "resources/model/stair1.obj"
+                "resources/model/Ring/stair1.obj"
         ));
 
         //Ring Stair 2
@@ -114,7 +114,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
-                "resources/model/stair2.obj"
+                "resources/model/Ring/stair2.obj"
         ));
         //Ring Pole
         objectObj.add(new Model(
@@ -124,7 +124,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.0600f, 0.00780f, 0.00600f, 1.0f),
-                "resources/model/ring_pole.obj"
+                "resources/model/Ring/ring_pole.obj"
         ));
         //Ring Connector
         objectObj.add(new Model(
@@ -134,7 +134,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
-                "resources/model/ring_connector.obj"
+                "resources/model/Ring/ring_connector.obj"
         ));
         //Ring Cushion
         objectObj.add(new Model(
@@ -144,7 +144,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/ring_connector.obj"
+                "resources/model/Ring/ring_connector.obj"
         ));
 
         //Ring Net
@@ -155,7 +155,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
-                "resources/model/ring_net.obj"
+                "resources/model/Ring/ring_net.obj"
         ));
 
         //Barrier
@@ -166,7 +166,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/barier.obj"
+                "resources/model/Barier/barier.obj"
         ));
 
         //Chair
@@ -178,7 +178,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/chairR.obj"
+                "resources/model/Chair/chairR.obj"
         ));
         //L
         objectObj.add(new Model(
@@ -188,7 +188,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/chairL.obj"
+                "resources/model/Chair/chairL.obj"
         ));
         //F
         objectObj.add(new Model(
@@ -198,52 +198,52 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/chairF.obj"
+                "resources/model/Chair/chairF.obj"
         ));
 
-        //Lamp 1
-        //Outside
-        objectObj.add(new Model(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
-                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
-                ),
-                new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/lamp1_outside.obj"
-        ));
-        //Onside
-        objectObj.add(new Model(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
-                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
-                ),
-                new ArrayList<>(),
-                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
-                "resources/model/lamp1_inside.obj"
-        ));
-
-        //Lamp 2
-        //Outside
-        objectObj.add(new Model(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
-                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
-                ),
-                new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/lamp2_outside.obj"
-        ));
-        //inside
-        objectObj.add(new Model(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
-                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
-                ),
-                new ArrayList<>(),
-                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
-                "resources/model/lamp2_inside.obj"
-        ));
+//        //Lamp 1
+//        //Outside
+//        objectObj.add(new Model(
+//                Arrays.asList(
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+//                ),
+//                new ArrayList<>(),
+//                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
+//                "resources/model/lamp1_outside.obj"
+//        ));
+//        //Onside
+//        objectObj.add(new Model(
+//                Arrays.asList(
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+//                ),
+//                new ArrayList<>(),
+//                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
+//                "resources/model/lamp1_inside.obj"
+//        ));
+//
+//        //Lamp 2
+//        //Outside
+//        objectObj.add(new Model(
+//                Arrays.asList(
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+//                ),
+//                new ArrayList<>(),
+//                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
+//                "resources/model/lamp2_outside.obj"
+//        ));
+//        //inside
+//        objectObj.add(new Model(
+//                Arrays.asList(
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+//                ),
+//                new ArrayList<>(),
+//                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
+//                "resources/model/lamp2_inside.obj"
+//        ));
 
 
 //            Character
@@ -254,7 +254,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.740f, 0.698f, 0.511f, 1.0f),
-                "resources/model/char_body.obj"
+                "resources/model/Char/char_body.obj"
         ));
 
         character.get(0).getChildObject().add(new Model(
@@ -264,7 +264,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.258f, 0.990f, 0.129f, 1.0f),
-                "resources/model/char_green.obj"
+                "resources/model/Char/char_green.obj"
         ));
         character.get(0).getChildObject().add(new Model(
                 Arrays.asList(
@@ -273,7 +273,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.220f, 0.534f, 0.630f, 1.0f),
-                "resources/model/char_jeans.obj"
+                "resources/model/Char/char_jeans.obj"
         ));
         character.get(0).getChildObject().add(new Model(
                 Arrays.asList(
@@ -282,7 +282,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.870f, 0.400f, 0.348f, 1.0f),
-                "resources/model/char_mouth.obj"
+                "resources/model/Char/char_mouth.obj"
         ));
         character.get(0).getChildObject().add(new Model(
                 Arrays.asList(
@@ -291,7 +291,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.880f, 0.809f, 0.801f, 1.0f),
-                "resources/model/char_eye.obj"
+                "resources/model/Char/char_eye.obj"
         ));
 
         character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
