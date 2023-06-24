@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9cf18ad-59f1-4536-ae66-ba4c0c3aa23f" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/src/main/java/Engine/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/src/main/java/Engine/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/char_body.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/char_body.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/char_eye.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/char_eye.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/char_green.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/char_green.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/char_jeans.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/char_jeans.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/char_mouth.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/char_mouth.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/target/classes/Engine/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/target/classes/Engine/Model.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/target/classes/Main.class" afterDir="false" />
     </list>
     <list id="e726a96f-a44b-4caf-8edb-925eae334d49" name="Changes by Raphael EV" comment="" />
