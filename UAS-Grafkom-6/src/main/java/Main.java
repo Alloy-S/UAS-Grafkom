@@ -38,6 +38,7 @@ public class Main {
     Vector3f FPPOffset = new Vector3f(0.f, 1.4f, -0.3f);
     int cameraMode = 0;
     private float lastFrameTime;
+    SkyBoxCube skybox = new SkyBoxCube();
 
     public void run() throws IOException {
 
@@ -53,7 +54,7 @@ public class Main {
         window.init();
         GL.createCapabilities();
         mouseInput = window.getMouseInput();
-
+        skybox = new SkyBoxCube();
 
         //Stage outside
         objectObj.add(new Model(
@@ -1044,6 +1045,8 @@ public class Main {
             for (Object object : barier) {
                 object.draw(maincamera, projection);
             }
+
+            skybox.draw(maincamera, projection);
 
 
             // Restore state
