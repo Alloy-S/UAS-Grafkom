@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9cf18ad-59f1-4536-ae66-ba4c0c3aa23f" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/Barier/barier1.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/resources/model/Barier/barier1.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../UAS-Grafkom-6/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../UAS-Grafkom-6/target/classes/Main.class" afterDir="false" />
     </list>

@@ -170,7 +170,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(0).translateObject(1.27622f, -0.52352f, -21.1026f);
         //2
         barier.add(new Model(
                 Arrays.asList(
@@ -181,7 +181,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(1).translateObject(1.27622f, -0.52352f, -18.7194f);
         //3
         barier.add(new Model(
                 Arrays.asList(
@@ -192,7 +192,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(2).translateObject(1.27622f, -0.52352f, -16.3464f);
         //4
         barier.add(new Model(
                 Arrays.asList(
@@ -203,7 +203,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(3).translateObject(1.27622f, -0.52352f, -13.979f);
         //5
         barier.add(new Model(
                 Arrays.asList(
@@ -214,7 +214,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(4).translateObject(1.27622f, -0.52352f, -11.6362f);
         //6
         barier.add(new Model(
                 Arrays.asList(
@@ -225,6 +225,8 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
+        barier.get(5).translateObject(1.27622f, -0.52352f, -9.21208f);
+//        7
         barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
@@ -234,7 +236,8 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(6).rotateObject((float) Math.toRadians(90),0f, 1f, 0f);
+        barier.get(6).translateObject(2.30669f, -0.52352f, -7.86746f);
         //8
         barier.add(new Model(
                 Arrays.asList(
@@ -245,7 +248,8 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(7).rotateObject((float) Math.toRadians(90),0f, 1f, 0f);
+        barier.get(7).translateObject(4.65895f, -0.52352f, -7.86746f);
         //9
         barier.add(new Model(
                 Arrays.asList(
@@ -256,7 +260,8 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(8).rotateObject((float) Math.toRadians(90),0f, 1f, 0f);
+        barier.get(8).translateObject(6.93514f, -0.52352f, -7.86746f);
         //10
         barier.add(new Model(
                 Arrays.asList(
@@ -267,7 +272,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(9).translateObject(8.34971f, -0.52352f, -6.41871f);
         //11
         barier.add(new Model(
                 Arrays.asList(
@@ -278,7 +283,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(10).translateObject(8.34971f, -0.52352f, -4.06022f);
         //12
         barier.add(new Model(
                 Arrays.asList(
@@ -289,7 +294,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(11).translateObject(8.34971f, -0.52352f, -1.72914f);
         //13
         barier.add(new Model(
                 Arrays.asList(
@@ -300,7 +305,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(12).translateObject(8.34971f, -0.52352f, 0.61934f);
         //14
         barier.add(new Model(
                 Arrays.asList(
@@ -311,7 +316,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(13).translateObject(8.34971f, -0.52352f, 2.98676f);
         //15
         barier.add(new Model(
                 Arrays.asList(
@@ -322,7 +327,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(14).translateObject(8.34971f, -0.52352f, 5.32952f);
         //16
         barier.add(new Model(
                 Arrays.asList(
@@ -333,7 +338,7 @@ public class Main {
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(0).translateObject(1.27622f, -0.5f, -21.1026f);
+        barier.get(15).translateObject(8.34971f, -0.52352f, 7.66422f);
         //17
         objectObj.add(new Model(
                 Arrays.asList(
@@ -737,7 +742,7 @@ public class Main {
         cameraMode2.setRotation(0, 0);
         cameraMode2.setPosition(0f, 5f, 0f);
         maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
-        maincamera.setPosition(barier.get(0).getCenterPoint().get(0), barier.get(0).getCenterPoint().get(1),barier.get(0).getCenterPoint().get(2));
+        maincamera.setPosition(cameraMode0.getPosition().get(0), cameraMode0.getPosition().get(1), cameraMode0.getPosition().get(2));
 
         System.out.println(barier.get(0).getCenterPoint());
     }
@@ -931,6 +936,7 @@ public class Main {
 
             }
         }
+
         if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
             if (cameraMode >= 2) {
                 cameraMode2.moveUp(move);
