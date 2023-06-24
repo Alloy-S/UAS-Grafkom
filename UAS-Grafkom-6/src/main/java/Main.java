@@ -728,7 +728,7 @@ public class Main {
 
     public void input() {
         float move = 0.1f;
-        System.out.println("camera mode: " + cameraMode);
+//        System.out.println("camera mode: " + cameraMode);
 
         if (window.isKeyPressed(GLFW_KEY_W)) {
 
@@ -988,6 +988,21 @@ public class Main {
 ////            camera.setPosition(temp.get(0), temp.get(1), temp.get(2));
 ////            camera.moveBackwards(distance);
 //        }
+        checkCollision();
+    }
+
+    public Boolean checkCollision() {
+        Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
+
+        for (Object object: objectObj) {
+            Vector3f objPos = new Vector3f(object.getCenterPoint().get(0),object.getCenterPoint().get(1),object.getCenterPoint().get(2));
+            float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
+            
+            System.out.println(objPos + " = " + distance);
+        }
+
+
+        return true;
     }
 
     public void loop() {
