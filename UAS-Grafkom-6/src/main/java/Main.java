@@ -61,7 +61,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.0975f, 0.650f, 0.282f, 1.0f),
+                new Vector4f(0.865f, 0.990f, 0.782f,1.0f),
                 "resources/model/Stage/stage_outside.obj"
         ));
         //Stage inside
@@ -71,7 +71,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
+                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
                 "resources/model/Stage/stage_inside.obj"
         ));
         //Ring Side
@@ -81,7 +81,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.500f, 0.442f, 0.440f, 1.0f),
+                new Vector4f(0.500f, 0.442f, 0.440f,1.0f),
                 "resources/model/Ring/ring_side.obj"
         ));
 
@@ -92,7 +92,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
+                new Vector4f(0.970f, 0.979f, 0.980f,1.0f),
                 "resources/model/Ring/ring_top.obj"
         ));
         //Ring Stair 1
@@ -102,7 +102,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
+                new Vector4f(0.430f, 0.434f, 0.434f,1.0f),
                 "resources/model/Ring/stair1.obj"
         ));
 
@@ -113,7 +113,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
+                new Vector4f(0.430f, 0.434f, 0.434f,1.0f),
                 "resources/model/Ring/stair2.obj"
         ));
         //Ring Pole
@@ -123,7 +123,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.0600f, 0.00780f, 0.00600f, 1.0f),
+                new Vector4f(0.0600f, 0.00780f, 0.00600f,1.0f),
                 "resources/model/Ring/ring_pole.obj"
         ));
         //Ring Connector
@@ -133,7 +133,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
+                new Vector4f(0.430f, 0.434f, 0.434f,1.0f),
                 "resources/model/Ring/ring_connector.obj"
         ));
         //Ring Cushion
@@ -143,7 +143,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
+                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
                 "resources/model/Ring/ring_connector.obj"
         ));
 
@@ -154,21 +154,401 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
+                new Vector4f(0.970f, 0.979f, 0.980f,1.0f),
                 "resources/model/Ring/ring_net.obj"
         ));
 
         //Barrier
+        //1
         objectObj.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier1.obj"
         ));
-
+        //2
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier2.obj"
+        ));
+        //3
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier3.obj"
+        ));
+        //4
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier4.obj"
+        ));
+        //5
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier5.obj"
+        ));
+        //6
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier6.obj"
+        ));
+        //7
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier7.obj"
+        ));
+        //8
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier8.obj"
+        ));
+        //9
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier9.obj"
+        ));
+        //10
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier10.obj"
+        ));
+        //11
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier11.obj"
+        ));
+        //12
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier12.obj"
+        ));
+        //13
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier13.obj"
+        ));
+        //14
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier14.obj"
+        ));
+        //15
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier15.obj"
+        ));
+        //16
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier16.obj"
+        ));
+        //17
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier17.obj"
+        ));
+        //18
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier18.obj"
+        ));
+        //19
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier19.obj"
+        ));
+        //20
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier20.obj"
+        ));
+        //21
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier21.obj"
+        ));
+        //22
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier22.obj"
+        ));
+        //23
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier23.obj"
+        ));
+        //24
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier24.obj"
+        ));
+        //25
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier25.obj"
+        ));
+        //26
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier26.obj"
+        ));
+        //27
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier27.obj"
+        ));
+        //28
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier28.obj"
+        ));
+        //29
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier29.obj"
+        ));
+        //30
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier30.obj"
+        ));
+        //31
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier31.obj"
+        ));
+        //32
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier32.obj"
+        ));
+        //33
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier33.obj"
+        ));
+        //34
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier34.obj"
+        ));
+        //35
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier35.obj"
+        ));
+        //36
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier36.obj"
+        ));
+        //37
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier37.obj"
+        ));
+        //38
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier38.obj"
+        ));
+        //39
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                "resources/model/Barier/barier39.obj"
+        ));
         //Chair
         //R
         objectObj.add(new Model(
@@ -177,7 +557,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
+                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
                 "resources/model/Chair/chairR.obj"
         ));
         //L
@@ -187,7 +567,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
+                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
                 "resources/model/Chair/chairL.obj"
         ));
         //F
@@ -197,54 +577,81 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
+                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
                 "resources/model/Chair/chairF.obj"
         ));
 
-//        //Lamp 1
-//        //Outside
-//        objectObj.add(new Model(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-//                "resources/model/lamp1_outside.obj"
-//        ));
-//        //Onside
-//        objectObj.add(new Model(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
-//                "resources/model/lamp1_inside.obj"
-//        ));
-//
-//        //Lamp 2
-//        //Outside
-//        objectObj.add(new Model(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-//                "resources/model/lamp2_outside.obj"
-//        ));
-//        //inside
-//        objectObj.add(new Model(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
-//                "resources/model/lamp2_inside.obj"
-//        ));
-
+        //Truss
+        //RF
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.480f, 0.485f, 0.485f,1.0f),
+                "resources/model/Truss/truss_RF.obj"
+        ));
+        //LF
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.480f, 0.485f, 0.485f,1.0f),
+                "resources/model/Truss/truss_LF.obj"
+        ));
+        //RB
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.480f, 0.485f, 0.485f,1.0f),
+                "resources/model/Truss/truss_RB.obj"
+        ));
+        //LB
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.480f, 0.485f, 0.485f,1.0f),
+                "resources/model/Truss/truss_LB.obj"
+        ));
+        //Pillar
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.480f, 0.485f, 0.485f,1.0f),
+                "resources/model/Truss/truss_pillar.obj"
+        ));
+        //Lighting Outside
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.0200f, 0.0154f, 0.0154f,1.0f),
+                "resources/model/Truss/truss_light_outside.obj"
+        ));
+        //Lighting Inside
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.990f, 0.921f, 0.921f,1.0f),
+                "resources/model/Truss/truss_light_inside.obj"
+        ));
 
 //            Character
         character.add(new Model(
