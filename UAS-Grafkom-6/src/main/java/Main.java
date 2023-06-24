@@ -340,235 +340,269 @@ public class Main {
         ));
         barier.get(15).translateObject(8.34971f, -0.52352f, 7.66422f);
         //17
-        objectObj.add(new Model(
+        //17
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier17.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(16).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
+        barier.get(16).translateObject(6.88403f, -0.52352f, 8.81884f);
         //18
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier18.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(17).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
+        barier.get(17).translateObject(4.53554f, -0.52352f, 8.81884f);
         //19
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier19.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(18).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
+        barier.get(18).translateObject(2.18329f, -0.52352f, 8.81884f);
         //20
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier20.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(19).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
+        barier.get(19).translateObject(-0.165194f, -0.52352f, 8.81884f);
         //21
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier21.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(20).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
+        barier.get(20).translateObject(-2.53262f, -0.52352f, 8.81884f);
         //22
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier22.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(21).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
+        barier.get(21).translateObject(-4.87966f, -0.52352f, 8.81884f);
         //23
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier23.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(22).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
+        barier.get(22).translateObject(-7.16141f, -0.52352f, 8.81884f);
         //24
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier24.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(23).translateObject(-8.45367f, -0.52352f, 7.62012f);
         //25
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier25.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(24).translateObject(-8.45367f, -0.52352f, 5.28546f);
         //26
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier26.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(25).translateObject(-8.45367f, -0.52352f, 2.94268f);
         //27
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier27.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(26).translateObject(-8.45367f, -0.52352f, 0.57526f);
         //28
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier28.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(27).translateObject(-8.45367f, -0.52352f, -1.77323f);
         //29
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier29.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(28).translateObject(-8.45367f, -0.52352f, -4.12548f);
         //30
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier30.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(29).translateObject(-8.45367f, -0.52352f, -6.47396f);
         //31
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier31.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(30).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
+        barier.get(30).translateObject(-7.20474f, -0.52352f, -7.85814f);
         //32
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier32.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(31).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
+        barier.get(31).translateObject(-4.87008f, -0.52352f, -7.85814f);
         //33
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier33.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(32).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
+        barier.get(32).translateObject(-2.5273f, -0.52352f, -7.85814f);
         //34
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier34.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(33).translateObject(-1.47143f, -0.52352f, -9.25968f);
         //35
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier35.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(34).translateObject(-1.47143f, -0.52352f, -11.5943f);
         //36
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier36.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(35).translateObject(-1.47143f, -0.52352f, -13.9371f);
         //37
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier37.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(36).translateObject(-1.47324f, -0.52352f, -16.3568f);
         //38
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier38.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(37).translateObject(-1.47143f, -0.52352f, -18.7749f);
         //39
-        objectObj.add(new Model(
+        barier.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
-                "resources/model/Barier/barier39.obj"
+                "resources/model/Barier/barier.obj"
         ));
+        barier.get(38).translateObject(-1.47143f, -0.52352f, -21.1495f);
         //Chair
         //R
         objectObj.add(new Model(
