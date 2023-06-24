@@ -38,6 +38,7 @@ public class Camera {
     }
 
     public void moveBackwards(float inc) {
+        System.out.println("jalan");
         viewMatrix.positiveZ(direction).negate().mul(inc);
         position.sub(direction);
         recalculate();
