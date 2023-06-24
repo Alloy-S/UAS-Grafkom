@@ -7,6 +7,7 @@ import org.lwjgl.opengl.*;
 import java.io.FileInputStream;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.lwjgl.opengl.GL11.GL_FLOAT;
 import static org.lwjgl.opengl.GL11.GL_TRIANGLES;
@@ -67,18 +68,21 @@ public class SkyBoxCube extends ShaderProgram
             };
 
     private final static String[] TEXTURE_FILE_NAMES = {"resources/skybox/right.png", "resources/skybox/left.png", "resources/skybox/top.png",
-            "resources/skybox/bottom.png", "resources/skybox/front.png", "resources/skybox/back.png"};
+            "resources/skybox/bottom.png", "resources/skybox/back.png", "resources/skybox/front.png"};
 
     int vao, vbo, textureId;
     UniformsMap uniformsMap;
 
-    public SkyBoxCube()
+    public SkyBoxCube(List<ShaderModuleData> shaderModuleDataList)
     {
-        super(Arrays.asList(new ShaderProgram.ShaderModuleData("resources/shaders/skybox.vert", GL_VERTEX_SHADER),
-                new ShaderProgram.ShaderModuleData("resources/shaders/skybox.frag", GL_FRAGMENT_SHADER)));
+        super(shaderModuleDataList);
         uniformsMap = new UniformsMap(getProgramId());
+        uniformsMap.createUniform("projectionMatrix");
+        uniformsMap.createUniform("viewMatrix");
+        uniformsMap.createUniform("cubeMap");
+
         textureId = loadCubeMap(TEXTURE_FILE_NAMES);
-        System.out.println(textureId);
+//        System.out.println(textureId);
         setupVAOVBO();
     }
 
