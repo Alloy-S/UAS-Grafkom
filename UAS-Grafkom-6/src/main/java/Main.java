@@ -62,7 +62,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.865f, 0.990f, 0.782f,1.0f),
+                new Vector4f(0.865f, 0.990f, 0.782f, 1.0f),
                 "resources/model/Stage/stage_outside.obj"
         ));
         //Stage inside
@@ -72,7 +72,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
                 "resources/model/Stage/stage_inside.obj"
         ));
         //Ring Side
@@ -82,7 +82,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.500f, 0.442f, 0.440f,1.0f),
+                new Vector4f(0.500f, 0.442f, 0.440f, 1.0f),
                 "resources/model/Ring/ring_side.obj"
         ));
 
@@ -93,7 +93,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.970f, 0.979f, 0.980f,1.0f),
+                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
                 "resources/model/Ring/ring_top.obj"
         ));
         //Ring Stair 1
@@ -103,7 +103,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.430f, 0.434f, 0.434f,1.0f),
+                new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
                 "resources/model/Ring/stair1.obj"
         ));
 
@@ -114,7 +114,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.430f, 0.434f, 0.434f,1.0f),
+                new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
                 "resources/model/Ring/stair2.obj"
         ));
         //Ring Pole
@@ -124,7 +124,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.0600f, 0.00780f, 0.00600f,1.0f),
+                new Vector4f(0.0600f, 0.00780f, 0.00600f, 1.0f),
                 "resources/model/Ring/ring_pole.obj"
         ));
         //Ring Connector
@@ -134,7 +134,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.430f, 0.434f, 0.434f,1.0f),
+                new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
                 "resources/model/Ring/ring_connector.obj"
         ));
         //Ring Cushion
@@ -144,7 +144,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
                 "resources/model/Ring/ring_connector.obj"
         ));
 
@@ -155,7 +155,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.970f, 0.979f, 0.980f,1.0f),
+                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
                 "resources/model/Ring/ring_net.obj"
         ));
 
@@ -167,7 +167,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(0).translateObject(1.27622f, -0.52352f, -21.1026f);
@@ -178,7 +178,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(1).translateObject(1.27622f, -0.52352f, -18.7194f);
@@ -189,7 +189,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(2).translateObject(1.27622f, -0.52352f, -16.3464f);
@@ -200,7 +200,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(3).translateObject(1.27622f, -0.52352f, -13.979f);
@@ -211,7 +211,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(4).translateObject(1.27622f, -0.52352f, -11.6362f);
@@ -222,7 +222,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(5).translateObject(1.27622f, -0.52352f, -9.21208f);
@@ -233,10 +233,10 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(6).rotateObject((float) Math.toRadians(90),0f, 1f, 0f);
+        barier.get(6).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(6).translateObject(2.30669f, -0.52352f, -7.86746f);
         //8
         barier.add(new Model(
@@ -245,10 +245,10 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(7).rotateObject((float) Math.toRadians(90),0f, 1f, 0f);
+        barier.get(7).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(7).translateObject(4.65895f, -0.52352f, -7.86746f);
         //9
         barier.add(new Model(
@@ -257,10 +257,10 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
-        barier.get(8).rotateObject((float) Math.toRadians(90),0f, 1f, 0f);
+        barier.get(8).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(8).translateObject(6.93514f, -0.52352f, -7.86746f);
         //10
         barier.add(new Model(
@@ -269,7 +269,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(9).translateObject(8.34971f, -0.52352f, -6.41871f);
@@ -280,7 +280,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(10).translateObject(8.34971f, -0.52352f, -4.06022f);
@@ -291,7 +291,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(11).translateObject(8.34971f, -0.52352f, -1.72914f);
@@ -302,7 +302,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(12).translateObject(8.34971f, -0.52352f, 0.61934f);
@@ -313,7 +313,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(13).translateObject(8.34971f, -0.52352f, 2.98676f);
@@ -324,7 +324,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(14).translateObject(8.34971f, -0.52352f, 5.32952f);
@@ -335,7 +335,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.530f, 0.504f, 0.504f,1.0f),
+                new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
                 "resources/model/Barier/barier.obj"
         ));
         barier.get(15).translateObject(8.34971f, -0.52352f, 7.66422f);
@@ -611,7 +611,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
                 "resources/model/Chair/chairR.obj"
         ));
         //L
@@ -621,7 +621,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
                 "resources/model/Chair/chairL.obj"
         ));
         //F
@@ -631,7 +631,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.260f, 0.232f, 0.231f,1.0f),
+                new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
                 "resources/model/Chair/chairF.obj"
         ));
 
@@ -643,7 +643,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.480f, 0.485f, 0.485f,1.0f),
+                new Vector4f(0.480f, 0.485f, 0.485f, 1.0f),
                 "resources/model/Truss/truss_RF.obj"
         ));
         //LF
@@ -653,7 +653,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.480f, 0.485f, 0.485f,1.0f),
+                new Vector4f(0.480f, 0.485f, 0.485f, 1.0f),
                 "resources/model/Truss/truss_LF.obj"
         ));
         //RB
@@ -663,7 +663,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.480f, 0.485f, 0.485f,1.0f),
+                new Vector4f(0.480f, 0.485f, 0.485f, 1.0f),
                 "resources/model/Truss/truss_RB.obj"
         ));
         //LB
@@ -673,7 +673,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.480f, 0.485f, 0.485f,1.0f),
+                new Vector4f(0.480f, 0.485f, 0.485f, 1.0f),
                 "resources/model/Truss/truss_LB.obj"
         ));
         //Pillar
@@ -683,7 +683,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.480f, 0.485f, 0.485f,1.0f),
+                new Vector4f(0.480f, 0.485f, 0.485f, 1.0f),
                 "resources/model/Truss/truss_pillar.obj"
         ));
         //Lighting Outside
@@ -693,7 +693,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.0200f, 0.0154f, 0.0154f,1.0f),
+                new Vector4f(0.0200f, 0.0154f, 0.0154f, 1.0f),
                 "resources/model/Truss/truss_light_outside.obj"
         ));
         //Lighting Inside
@@ -703,7 +703,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.990f, 0.921f, 0.921f,1.0f),
+                new Vector4f(0.990f, 0.921f, 0.921f, 1.0f),
                 "resources/model/Truss/truss_light_inside.obj"
         ));
 
@@ -777,38 +777,34 @@ public class Main {
         cameraMode2.setPosition(0f, 5f, 0f);
         maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
         maincamera.setPosition(cameraMode0.getPosition().get(0), cameraMode0.getPosition().get(1), cameraMode0.getPosition().get(2));
-
-        System.out.println(barier.get(0).getCenterPoint());
     }
 
-
+    boolean collision;
     public void input() {
         float move = 0.1f;
 //        System.out.println("camera mode: " + cameraMode);
+        float dx = (float) (move * Math.sin(Math.toRadians(character.get(0).rotation)));
+        float dz = (float) (move * Math.cos(Math.toRadians(character.get(0).rotation)));
+        float theta = character.get(0).rotation + angleAroundPlayer;
+        float offsetX = (float) (distanceCamera * Math.sin(Math.toRadians(theta)));
+        float offsetZ = (float) (distanceCamera * Math.cos(Math.toRadians(theta)));
+        float offsetX1 = (float) (FPPOffset.z * Math.sin(Math.toRadians(theta)));
+        float offsetZ1 = (float) (FPPOffset.z * Math.cos(Math.toRadians(theta)));
 
         if (window.isKeyPressed(GLFW_KEY_W)) {
-
             if (cameraMode >= 2) {
                 cameraMode2.moveForward(move);
             } else {
-                float dx = (float) (move * Math.sin(Math.toRadians(character.get(0).rotation)));
-                float dz = (float) (move * Math.cos(Math.toRadians(character.get(0).rotation)));
-//            System.out.println("dx: " + dx + " dz: " + dz + "player rotation: " + character.get(0).rotation);
-                character.get(0).translateObject(dx, 0f, dz);
-                float theta = character.get(0).rotation + angleAroundPlayer;
-                float offsetX = (float) (distanceCamera * Math.sin(Math.toRadians(theta)));
-                float offsetZ = (float) (distanceCamera * Math.cos(Math.toRadians(theta)));
-//            System.out.println(character.get(0).getCenterPoint());
-//            System.out.println(offsetX + ", " + offsetZ);
 //            update TPP
-                cameraMode0.setRotation(0f, (float) Math.toRadians(180 - theta));
-                cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
+                character.get(0).translateObject(dx, 0f, dz);
+                if (!checkCollision()) {
+                    cameraMode0.setRotation(0f, (float) Math.toRadians(180 - theta));
+                    cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
 //            update FPP
-                float offsetX1 = (float) (FPPOffset.z * Math.sin(Math.toRadians(theta)));
-                float offsetZ1 = (float) (FPPOffset.z * Math.cos(Math.toRadians(theta)));
-//            cameraMode1.setRotation(0f, (float) Math.toRadians(180 -theta));
-                cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
-
+                    cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
+                } else {
+                    character.get(0).translateObject(-dx, 0f,-dz);
+                }
             }
 
             if (!checkCollision()) {
@@ -833,22 +829,17 @@ public class Main {
             if (cameraMode >= 2) {
                 cameraMode2.moveBackwards(move);
             } else {
-                float dx = (float) (move * Math.sin(Math.toRadians(character.get(0).rotation)));
-                float dz = (float) (move * Math.cos(Math.toRadians(character.get(0).rotation)));
-//            System.out.println("dx: " + dx + " dz: " + dz + "player rotation: " + character.get(0).rotation);
-                character.get(0).translateObject(-dx, 0f, -dz);
-                float theta = character.get(0).rotation + angleAroundPlayer;
-                float offsetX = (float) (distanceCamera * Math.sin(Math.toRadians(theta)));
-                float offsetZ = (float) (distanceCamera * Math.cos(Math.toRadians(theta)));
-//            System.out.println(character.get(0).getCenterPoint());
-//            System.out.println(offsetX + ", " + offsetZ);
-                cameraMode0.setRotation(0f, (float) Math.toRadians(180 - theta));
-                cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
 
-                float offsetX1 = (float) (FPPOffset.z * Math.sin(Math.toRadians(theta)));
-                float offsetZ1 = (float) (FPPOffset.z * Math.cos(Math.toRadians(theta)));
+                character.get(0).translateObject(-dx, 0f, -dz);
+                if (!checkCollision()) {
+                    cameraMode0.setRotation(0f, (float) Math.toRadians(180 - theta));
+                    cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
+
 //            cameraMode1.setRotation(0f, (float) Math.toRadians(180 -theta));
-                cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
+                    cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
+                } else  {
+                    character.get(0).translateObject(dx, 0f, dz);
+                }
             }
 
             switch (cameraMode) {
@@ -877,19 +868,16 @@ public class Main {
                 character.get(0).rotation += 2;
                 character.get(0).translateObject(characterPos.x, characterPos.y, characterPos.z);
 
-                float theta = character.get(0).rotation + angleAroundPlayer;
-                float offsetX = (float) (distanceCamera * Math.sin(Math.toRadians(theta)));
-                float offsetZ = (float) (distanceCamera * Math.cos(Math.toRadians(theta)));
 //            System.out.println(character.get(0).getCenterPoint());
 //            System.out.println(offsetX + ", " + offsetZ);
                 cameraMode0.setRotation(0f, (float) Math.toRadians(180 - theta));
                 cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
-                float offsetX1 = (float) (FPPOffset.z * Math.sin(Math.toRadians(theta)));
-                float offsetZ1 = (float) (FPPOffset.z * Math.cos(Math.toRadians(theta)));
-                System.out.println(-character.get(0).rotation + ", " + cameraMode1.getRotation().y);
+
+//                System.out.println(-character.get(0).rotation + ", " + cameraMode1.getRotation().y);
                 cameraMode1.addRotation(0, (float) Math.toRadians(-2));
                 cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
             }
+
             switch (cameraMode) {
                 case 0 -> {
                     maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
@@ -916,36 +904,33 @@ public class Main {
                 character.get(0).rotateObject((float) Math.toRadians(-2), 0f, 1f, 0f);
                 character.get(0).rotation -= 2;
                 character.get(0).translateObject(characterPos.x, characterPos.y, characterPos.z);
-
-                float theta = character.get(0).rotation + angleAroundPlayer;
-                float offsetX = (float) (distanceCamera * Math.sin(Math.toRadians(theta)));
-                float offsetZ = (float) (distanceCamera * Math.cos(Math.toRadians(theta)));
 //            System.out.println(character.get(0).getCenterPoint());
 //            System.out.println(offsetX + ", " + offsetZ);
                 cameraMode0.setRotation(0f, (float) Math.toRadians(180 - theta));
                 cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
 
-                float offsetX1 = (float) (FPPOffset.z * Math.sin(Math.toRadians(theta)));
-                float offsetZ1 = (float) (FPPOffset.z * Math.cos(Math.toRadians(theta)));
 
                 cameraMode1.addRotation(0, (float) Math.toRadians(2));
                 cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
             }
+        }
 
-            switch (cameraMode) {
-                case 0 -> {
-                    maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
-                    maincamera.setPosition(cameraMode0.getPosition().x, cameraMode0.getPosition().y, cameraMode0.getPosition().z);
-                }
-                case 1 -> {
-                    maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
-                    maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
-                }
-                case 2 -> {
-                    maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
-                    maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
-                }
+        collision = checkCollision();
+
+        switch (cameraMode) {
+            case 0 -> {
+                maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
+                maincamera.setPosition(cameraMode0.getPosition().x, cameraMode0.getPosition().y, cameraMode0.getPosition().z);
             }
+            case 1 -> {
+                maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
+                maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
+            }
+            case 2 -> {
+                maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
+                maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
+            }
+        }
 
 
         if (mouseInput.isLeftButtonPressed()) {
@@ -998,6 +983,7 @@ public class Main {
 
         if (window.isKeyPressed(GLFW_KEY_2)) {
             cameraMode = 1;
+            System.out.println("1");
             maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
             maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
         }
@@ -1008,65 +994,30 @@ public class Main {
             maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
         }
 
-//        if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
-//            maincamera.moveUp(move);
-//            maincamera.moveForward(1f);
-//            character.get(0).translateObject(-character.get(0).getCenterPoint().get(0), -character.get(0).getCenterPoint().get(1), -character.get(0).getCenterPoint().get(2));
-//            character.get(0).translateObject(maincamera.getPosition().x - TPPOffset.x, maincamera.getPosition().y - TPPOffset.y, maincamera.getPosition().z - TPPOffset.z);
-//            maincamera.moveBackwards(1f);
-//        }
-//
-//        if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
-//            maincamera.moveDown(move);
-//            maincamera.moveForward(1f);
-//            character.get(0).translateObject(-character.get(0).getCenterPoint().get(0), -character.get(0).getCenterPoint().get(1), -character.get(0).getCenterPoint().get(2));
-//            character.get(0).translateObject(maincamera.getPosition().x - TPPOffset.x, maincamera.getPosition().y - TPPOffset.y, maincamera.getPosition().z - TPPOffset.z);
-//            maincamera.moveBackwards(1f);
-        }
-
         if (window.getMouseInput().getScroll().y != 0) {
             projection.setFOV(projection.getFOV() - (window.getMouseInput().getScroll().y * 0.01f));
             window.getMouseInput().setScroll(new Vector2f());
         }
-
-
-
-//        if (window.isKeyPressed(GLFW_KEY_DOWN)) {
-//            objectObj.get(18).translateObject(0f, 0f, -move);
-////            camera.setPosition(temp.get(0), temp.get(1), temp.get(2));
-////            camera.moveBackwards(distance);
-//        }
-//        if (window.isKeyPressed(GLFW_KEY_RIGHT)) {
-//            objectObj.get(18).translateObject(-move, 0f, 0f);
-////            camera.setPosition(temp.get(0), temp.get(1), temp.get(2));
-////            camera.moveBackwards(distance);
-//        }
-//        if (window.isKeyPressed(GLFW_KEY_UP)) {
-//            objectObj.get(18).translateObject(0f, 0f, move);
-////            camera.setPosition(temp.get(0), temp.get(1), temp.get(2));
-////            camera.moveBackwards(distance);
-//
-//        }
-//        if (window.isKeyPressed(GLFW_KEY_LEFT)) {
-//            objectObj.get(18).translateObject(move, 0f, 0f);
-////            camera.setPosition(temp.get(0), temp.get(1), temp.get(2));
-////            camera.moveBackwards(distance);
-//        }
-//        checkCollision();
     }
+
 
     public boolean checkCollision() {
         Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
 
+        System.out.println("-----------------------");
+        System.out.println(characterPos);
         for (Object object: barier) {
             Vector3f objPos = new Vector3f(object.getCenterPoint().get(0),object.getCenterPoint().get(1),object.getCenterPoint().get(2));
             float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
 
-            if (distance < 0.9) {
+            if (distance < 1) {
+                System.out.println("nabrak");
+                System.out.println(objPos + " = " + distance);
                 return true;
             }
-            System.out.println(objPos + " = " + distance);
+//            System.out.println(objPos + " = " + distance);
         }
+        System.out.println("-----------------------");
         return false;
     }
 
