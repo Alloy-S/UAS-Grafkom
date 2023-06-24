@@ -25,6 +25,10 @@ public class Camera {
         recalculate();
     }
 
+    public Vector2f getRotation() {
+        return rotation;
+    }
+
     public Vector3f getPosition() {
         return position;
     }
