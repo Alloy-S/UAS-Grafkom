@@ -21,6 +21,7 @@ public class Main {
     ArrayList<Object> barier = new ArrayList<>();
     ArrayList<Object> ring = new ArrayList<>();
     ArrayList<Object> stair = new ArrayList<>();
+    ArrayList<Object> totem = new ArrayList<>();
     Camera maincamera = new Camera();
     Camera cameraMode0 = new Camera();
     Camera cameraMode1 = new Camera();
@@ -771,6 +772,56 @@ public class Main {
                 true
         ));
 
+        totem.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.590f, 0.303f, 0.0354f, 1.0f),
+                "resources/model/Totem/base_totem.obj",
+                true
+        ));
+
+        totem.get(0).getChildObject().add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.415f, 0.880f, 0.0352f, 1.0f),
+                "resources/model/Totem/totem.obj",
+                true
+        ));
+        totem.get(0).rotateObject((float) Math.toRadians(-90), 0f, 1f, 0f);
+        totem.get(0).translateObject(-2.86893f, -0.15f ,-20.5927f);
+
+        totem.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.590f, 0.303f, 0.0354f, 1.0f),
+                "resources/model/Totem/base_totem.obj",
+                true
+        ));
+
+
+        totem.get(1).getChildObject().add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.415f, 0.880f, 0.0352f, 1.0f),
+                "resources/model/Totem/totem.obj",
+                true
+        ));
+
+        totem.get(1).translateObject(2.8171f, -0.15f ,-20.5927f);
+
+
 //            Character
         character.add(new Model(
                 Arrays.asList(
@@ -1119,6 +1170,10 @@ public class Main {
             }
 
             for (Object object : barier) {
+                object.draw(maincamera, projection);
+            }
+
+            for (Object object : totem) {
                 object.draw(maincamera, projection);
             }
 
