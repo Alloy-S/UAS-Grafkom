@@ -22,6 +22,7 @@ public class Main {
     ArrayList<Object> ring = new ArrayList<>();
     ArrayList<Object> stair = new ArrayList<>();
     ArrayList<Object> totem = new ArrayList<>();
+    ArrayList<Object> container = new ArrayList<>();
     Camera maincamera = new Camera();
     Camera cameraMode0 = new Camera();
     Camera cameraMode1 = new Camera();
@@ -658,6 +659,40 @@ public class Main {
                 false
         ));
         barier.get(38).translateObject(-1.47143f, -0.36f, -21.1495f);
+        //        container
+//        right
+        container.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.730f, 0.0730f, 0.0730f, 1.0f),
+                "resources/model/Container/red_container.obj",
+                false
+        ));
+//      back
+        container.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.172f, 0.730f, 0.0730f, 1.0f),
+                "resources/model/Container/green_container.obj",
+                false
+        ));
+//      left
+        container.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.0730f, 0.325f, 0.730f, 1.0f),
+                "resources/model/Container/blue_container.obj",
+                false
+        ));
         //Chair
         //R
         objectObj.add(new Model(
@@ -681,6 +716,7 @@ public class Main {
                 "resources/model/Chair/chairL.obj",
                 false
         ));
+
         //F
         objectObj.add(new Model(
                 Arrays.asList(
@@ -1170,6 +1206,10 @@ public class Main {
             }
 
             for (Object object : barier) {
+                object.draw(maincamera, projection);
+            }
+
+            for (Object object : container) {
                 object.draw(maincamera, projection);
             }
 
