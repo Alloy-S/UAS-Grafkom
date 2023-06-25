@@ -1182,8 +1182,9 @@ public class Main {
                 "resources/model/Char 2/char2_mulut.obj",
                 false
         ));
-//        character2.get(0).scaleObject(0.2f, );
-        character2.get(0).translateObject(0f, 1.95f, 0f);
+        character2.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
+        character2.get(0).rotation += 180;
+        character2.get(0).translateObject(0f, 1.95f, 2.0f);
 
 
         character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
@@ -1222,8 +1223,6 @@ public class Main {
         maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
         maincamera.setPosition(cameraMode0.getPosition().get(0), cameraMode0.getPosition().get(1), cameraMode0.getPosition().get(2));
     }
-
-    boolean collision;
 
     public void input() {
 //        System.out.println(maincamera.getPosition());
@@ -1468,17 +1467,6 @@ public class Main {
             }
 //            System.out.println(objPos + " = " + distance);
         }
-        for (Object object : ring) {
-            Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
-            float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
-
-            if (distance < 4.25f) {
-//                System.out.println("nabrak");
-//                System.out.println(objPos + " = " + distance);
-                return true;
-            }
-//            System.out.println(objPos + " = " + distance);
-        }
 
         for (Object object : sideRing) {
             Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
@@ -1499,6 +1487,7 @@ public class Main {
             if (distance < 0.95) {
 //                System.out.println("nabrak");
 //                System.out.println(objPos + " = " + distance);
+                goIn = true;
                 return true;
             }
 //            System.out.println(objPos + " = " + distance);
