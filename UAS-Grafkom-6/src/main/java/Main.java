@@ -1012,7 +1012,7 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.415f, 0.880f, 0.0352f, 1.0f),
+                new Vector4f(1f, 0.84f, 0f, 1.0f),
                 "resources/model/Totem/totem.obj",
                 true
         ));
@@ -1037,13 +1037,61 @@ public class Main {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.415f, 0.880f, 0.0352f, 1.0f),
+                new Vector4f(1f, 0.84f, 0f, 1.0f),
                 "resources/model/Totem/totem.obj",
                 false
         ));
 
         totem.get(1).translateObject(2.8171f, -0.15f ,-20.5927f);
 
+        totem.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.590f, 0.303f, 0.0354f, 1.0f),
+                "resources/model/Totem/base_totem.obj",
+                true
+        ));
+
+        totem.get(2).getChildObject().add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 0.84f, 0f, 1.0f),
+                "resources/model/Totem/totem.obj",
+                true
+        ));
+        totem.get(2).rotateObject((float) Math.toRadians(-90), 0f, 1f, 0f);
+        totem.get(2).translateObject(-2.86893f, -0.15f ,-12.5927f);
+
+        totem.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.590f, 0.303f, 0.0354f, 1.0f),
+                "resources/model/Totem/base_totem.obj",
+                true
+        ));
+
+
+        totem.get(3).getChildObject().add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 0.84f, 0f, 1.0f),
+                "resources/model/Totem/totem.obj",
+                true
+        ));
+
+        totem.get(3).translateObject(2.8171f, -0.15f ,-12.5927f);
 
         //Character JOHN CENA
         character.add(new Model(

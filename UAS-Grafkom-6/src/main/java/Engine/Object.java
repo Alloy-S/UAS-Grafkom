@@ -75,11 +75,13 @@ public class Object extends ShaderProgram{
                 new Vector3f(22f, 8f, -5f),
                 new Vector3f(-22f, 8f, -5f),
                 new Vector3f(0f, 8f, 25f),
-                new Vector3f(3f, 0.85f, -25f),
-                new Vector3f(-3f, 0.85f, -25f),
+                new Vector3f(2.8f, 0.85f, -21f),
+                new Vector3f(-2.8f, 0.85f, -21f),
+                new Vector3f(2.8f, 0.85f, -13f),
+                new Vector3f(-2.8f, 0.85f, -13f),
         };
-        lightSwitchDirectionX = new float[]{1f,-1f,1f,-1f,0,0,0,0,0,0,0};
-        lightSwitchDirectionZ = new float[]{1f,1f,-1f,-1f,0,0,0,0,0,0,0};
+        lightSwitchDirectionX = new float[]{1f,-1f,1f,-1f,0,0,0,0,0,0,0,0,0};
+        lightSwitchDirectionZ = new float[]{1f,1f,-1f,-1f,0,0,0,0,0,0,0,0,0};
 
         for(int i = 0; i < _pointLightPositions.length; i++){
             uniformsMap.createUniform("pointLight["+i+"].position");
@@ -142,9 +144,9 @@ public class Object extends ShaderProgram{
             uniformsMap.setUniform("dirLight.specular", new Vector3f(0.5f, 0.5f, 0.5f));
         } else {
             uniformsMap.setUniform("dirLight.direction", new Vector3f(0f, 0f, 0f));
-            uniformsMap.setUniform("dirLight.ambient", new Vector3f(1.4f, 1.4f, 1.4f));
-            uniformsMap.setUniform("dirLight.diffuse", new Vector3f(1.2f, 1.2f, 1.2f));
-            uniformsMap.setUniform("dirLight.specular", new Vector3f(1.2f, 1.2f, 1.2f));
+            uniformsMap.setUniform("dirLight.ambient", new Vector3f(0.6f, 0.6f, 0.6f));
+            uniformsMap.setUniform("dirLight.diffuse", new Vector3f(0.6f, 0.6f, 0.6f));
+            uniformsMap.setUniform("dirLight.specular", new Vector3f(1f, 1f, 1f));
         }
 
         for (int i = 0; i < _pointLightPositions.length; i++) {
