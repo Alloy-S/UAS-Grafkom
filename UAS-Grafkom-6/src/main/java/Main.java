@@ -1469,7 +1469,11 @@ public class Main {
 
     public boolean checkCollision() {
         Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
-
+        float characterDistance = (float) Math.sqrt(Math.pow(0 - characterPos.x, 2) + Math.pow(0 - characterPos.z, 2));
+        System.out.println("char dis: " + characterDistance);
+        if (characterDistance > 21f) {
+            return true;
+        }
 //        System.out.println("-----------------------");
 //        System.out.println(characterPos);
         for (Object object : barier) {
