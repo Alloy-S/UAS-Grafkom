@@ -29,6 +29,8 @@ public class Main {
     Projection projection = new Projection(window.getWidth(), window.getHeight());
     private float distanceCamera = 2f;
     private float angleAroundPlayer = 0;
+    private float angleFPPX = 0;
+    private float angleFPPY = 0;
     Vector3f TPPOffset = new Vector3f(0.0f, 1.2f, 0f);
     Vector3f FPPOffset = new Vector3f(0.f, 1.4f, -0.3f);
     int cameraMode = 0;
@@ -863,34 +865,19 @@ public class Main {
             if (cameraMode >= 2) {
                 cameraMode2.moveForward(move);
             } else {
-//            update TPP
+
                 character.get(0).translateObject(dx, 0f, dz);
                 if (!checkCollision()) {
+                    // update TPP
                     cameraMode0.setRotation(0f, (float) Math.toRadians(180 - theta));
                     cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
-//            update FPP
+                    //  update FPP
                     cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
                 } else {
                     character.get(0).translateObject(-dx, 0f, -dz);
                 }
             }
 
-            if (!checkCollision()) {
-                switch (cameraMode) {
-                    case 0 -> {
-                        maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
-                        maincamera.setPosition(cameraMode0.getPosition().x, cameraMode0.getPosition().y, cameraMode0.getPosition().z);
-                    }
-                    case 1 -> {
-                        maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
-                        maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
-                    }
-                    case 2 -> {
-                        maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
-                        maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
-                    }
-                }
-            }
         }
         if (window.isKeyPressed(GLFW_KEY_S)) {
 
@@ -907,21 +894,6 @@ public class Main {
                     cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
                 } else {
                     character.get(0).translateObject(dx, 0f, dz);
-                }
-            }
-
-            switch (cameraMode) {
-                case 0 -> {
-                    maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
-                    maincamera.setPosition(cameraMode0.getPosition().x, cameraMode0.getPosition().y, cameraMode0.getPosition().z);
-                }
-                case 1 -> {
-                    maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
-                    maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
-                }
-                case 2 -> {
-                    maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
-                    maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
                 }
             }
         }
@@ -944,21 +916,6 @@ public class Main {
 //                System.out.println(-character.get(0).rotation + ", " + cameraMode1.getRotation().y);
                 cameraMode1.addRotation(0, (float) Math.toRadians(-2));
                 cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
-            }
-
-            switch (cameraMode) {
-                case 0 -> {
-                    maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
-                    maincamera.setPosition(cameraMode0.getPosition().x, cameraMode0.getPosition().y, cameraMode0.getPosition().z);
-                }
-                case 1 -> {
-                    maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
-                    maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
-                }
-                case 2 -> {
-                    maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
-                    maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
-                }
             }
         }
 
@@ -983,24 +940,6 @@ public class Main {
             }
         }
 
-        collision = checkCollision();
-
-        switch (cameraMode) {
-            case 0 -> {
-                maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
-                maincamera.setPosition(cameraMode0.getPosition().x, cameraMode0.getPosition().y, cameraMode0.getPosition().z);
-            }
-            case 1 -> {
-                maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
-                maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
-            }
-            case 2 -> {
-                maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
-                maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
-            }
-        }
-
-
         if (mouseInput.isLeftButtonPressed()) {
             if (cameraMode >= 2) {
 
@@ -1009,26 +948,44 @@ public class Main {
             }
 
         }
+
         if (window.getMouseInput().isRightButtonPressed()) {
-            if (cameraMode >= 2) {
+            if (cameraMode == 0) {
+                Vector2f displVec = window.getMouseInput().getDisplVec();
+                float angel = (float) Math.toRadians(displVec.y * 3f);
+                cameraMode0.addRotation(0, angel);
+                angleAroundPlayer += angel;
+                System.out.println(cameraMode0.getRotation());
+                cameraMode0.setRotation(0f, (float) Math.toRadians(180 - theta));
+                cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
+            } else if (cameraMode == 1) {
+                Vector2f displVec = window.getMouseInput().getDisplVec();
+                float degreeX = (float) Math.toRadians(displVec.x * 0.1f);
+                float degreeY = (float) Math.toRadians(displVec.y * 0.1f);
+                cameraMode1.addRotation(degreeX, degreeY);
+                angleFPPY += degreeY;
+                Vector2f currDegree = new Vector2f((float) Math.toDegrees(cameraMode1.getRotation().x), (float) Math.toDegrees(cameraMode1.getRotation().y));
+//                System.out.println("currdegre: " + currDegree);
+                if (currDegree.y < -89f || currDegree.y > 89f ) {
+                    cameraMode1.addRotation(0, -degreeY);
+                }
+
+                if (currDegree.x < -20f || currDegree.x > 89f ) {
+                    cameraMode1.addRotation(-degreeX, 0);
+                }
+            } else if (cameraMode == 2) {
                 Vector2f displVec = window.getMouseInput().getDisplVec();
                 cameraMode2.addRotation((float) Math.toRadians(displVec.x * 0.1f), (float) Math.toRadians(displVec.y * 0.1f));
-//                System.out.println(cameraMode1.getRotation());
-                maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
-            } else {
-                Vector2f displVec = window.getMouseInput().getDisplVec();
-                cameraMode1.addRotation(0, (float) Math.toRadians(displVec.y * 0.1f));
-                System.out.println(cameraMode1.getRotation());
-                maincamera.addRotation((float) Math.toRadians(displVec.x * 0.1f), (float) Math.toRadians(displVec.y * 0.1f));
-
+                System.out.println(cameraMode2.getRotation());
             }
+
         }
 
         if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
             if (cameraMode >= 2) {
                 cameraMode2.moveUp(move);
-                maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
-                maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
+//                maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
+//                maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
             }
 
         }
@@ -1036,12 +993,11 @@ public class Main {
         if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
             if (cameraMode >= 2) {
                 cameraMode2.moveDown(move);
-                maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
-                maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
+//                maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
+//                maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
             }
 
         }
-
 
         if (window.isKeyPressed(GLFW_KEY_1)) {
             cameraMode = 0;
@@ -1066,21 +1022,36 @@ public class Main {
             projection.setFOV(projection.getFOV() - (window.getMouseInput().getScroll().y * 0.01f));
             window.getMouseInput().setScroll(new Vector2f());
         }
+
+        switch (cameraMode) {
+            case 0 -> {
+                maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
+                maincamera.setPosition(cameraMode0.getPosition().x, cameraMode0.getPosition().y, cameraMode0.getPosition().z);
+            }
+            case 1 -> {
+                maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
+                maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
+            }
+            case 2 -> {
+                maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
+                maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
+            }
+        }
     }
 
 
     public boolean checkCollision() {
         Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
 
-        System.out.println("-----------------------");
-        System.out.println(characterPos);
+//        System.out.println("-----------------------");
+//        System.out.println(characterPos);
         for (Object object : barier) {
             Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
             float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
 
             if (distance < 0.95) {
-                System.out.println("nabrak");
-                System.out.println(objPos + " = " + distance);
+//                System.out.println("nabrak");
+//                System.out.println(objPos + " = " + distance);
                 return true;
             }
 //            System.out.println(objPos + " = " + distance);
@@ -1089,9 +1060,9 @@ public class Main {
             Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
             float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
 
-            if (distance < 4.5f) {
-                System.out.println("nabrak");
-                System.out.println(objPos + " = " + distance);
+            if (distance < 4.25f) {
+//                System.out.println("nabrak");
+//                System.out.println(objPos + " = " + distance);
                 return true;
             }
 //            System.out.println(objPos + " = " + distance);
@@ -1102,13 +1073,13 @@ public class Main {
             float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
 
             if (distance < 0.95) {
-                System.out.println("nabrak");
-                System.out.println(objPos + " = " + distance);
+//                System.out.println("nabrak");
+//                System.out.println(objPos + " = " + distance);
                 return true;
             }
 //            System.out.println(objPos + " = " + distance);
         }
-        System.out.println("-----------------------");
+//        System.out.println("-----------------------");
         return false;
     }
 
@@ -1127,11 +1098,11 @@ public class Main {
             for (Object object : objectObj) {
                 object.draw(maincamera, projection);
             }
-            if(cameraMode != 1) {
-                for (Object object : character) {
-                    object.draw(maincamera, projection);
-                }
+//            if (cameraMode != 1) {
+            for (Object object : character) {
+                object.draw(maincamera, projection);
             }
+//            }
 
             for (Object object : ring) {
                 object.draw(maincamera, projection);
