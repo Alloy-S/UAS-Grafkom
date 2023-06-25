@@ -15,7 +15,7 @@ import static org.lwjgl.opengl.GL11.glClearColor;
 import static org.lwjgl.opengl.GL20.*;
 
 public class Main {
-    private Window window = new Window(1080, 1080, "Hello World");
+    private Window window = new Window(1920, 1080, "Hello World");
     ArrayList<Object> objectObj = new ArrayList<>();
     ArrayList<Object> character = new ArrayList<>();
     ArrayList<Object> character2 = new ArrayList<>();
@@ -1018,7 +1018,7 @@ public class Main {
                 true
         ));
         totem.get(0).rotateObject((float) Math.toRadians(-90), 0f, 1f, 0f);
-        totem.get(0).translateObject(-2.86893f, -0.15f ,-20.5927f);
+        totem.get(0).translateObject(-2.86893f, -0.15f, -20.5927f);
 
         totem.add(new Model(
                 Arrays.asList(
@@ -1043,7 +1043,7 @@ public class Main {
                 true
         ));
 
-        totem.get(1).translateObject(2.8171f, -0.15f ,-20.5927f);
+        totem.get(1).translateObject(2.8171f, -0.15f, -20.5927f);
 
         totem.add(new Model(
                 Arrays.asList(
@@ -1067,7 +1067,7 @@ public class Main {
                 true
         ));
         totem.get(2).rotateObject((float) Math.toRadians(-90), 0f, 1f, 0f);
-        totem.get(2).translateObject(-2.86893f, -0.15f ,-12.5927f);
+        totem.get(2).translateObject(-2.86893f, -0.15f, -12.5927f);
 
         totem.add(new Model(
                 Arrays.asList(
@@ -1092,7 +1092,7 @@ public class Main {
                 true
         ));
 
-        totem.get(3).translateObject(2.8171f, -0.15f ,-12.5927f);
+        totem.get(3).translateObject(2.8171f, -0.15f, -12.5927f);
 
         //Character JOHN CENA
         character.add(new Model(
@@ -1136,9 +1136,7 @@ public class Main {
                 "resources/model/Char/char_mouth.obj",
                 false
         ));
-        character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
-        character.get(0).rotation += 180;
-        character.get(0).translateObject(5f, 0.8f, 0f);
+
 
 
         //Character The ROCK
@@ -1183,14 +1181,19 @@ public class Main {
                 "resources/model/Char 2/char2_mulut.obj",
                 false
         ));
+
+//        character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
+//        character.get(0).rotation += 180;
+        character.get(0).translateObject(-0.10231846f, 0.8f, -20.969143f);
+
         character2.get(0).rotateObject((float) Math.toRadians(135), 0f, 1f, 0f);
         character2.get(0).rotation += 180;
         character2.get(0).translateObject(-2f, 1.95f, 2.1f);
 
 
-        character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
-        character.get(0).rotation += 180;
-        character.get(0).translateObject(10f, 0f, 0f);
+//        character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
+//        character.get(0).rotation += 180;
+//        character.get(0).translateObject(4f, 0.0f, -19.963898f);
 
         float theta = character.get(0).rotation + angleAroundPlayer;
         float offsetX = (float) (distanceCamera * Math.sin(Math.toRadians(theta)));
@@ -1208,8 +1211,8 @@ public class Main {
         cameraMode1.setRotation(0, (float) Math.toRadians(180));
         cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
 //        Free Cam
-        cameraMode2.setRotation(0, 0);
-        cameraMode2.setPosition(0f, 5f, 0f);
+        cameraMode2.setRotation(0, (float) Math.toRadians(180));
+        cameraMode2.setPosition(-0.07410684f, 3.8507197f, -30.646013f);
 //        set camera 3
         cameraMode3.setRotation((float) Math.toRadians(picth), 0);
         cameraMode3.setPosition(0f, 5f, 10f);
@@ -1277,7 +1280,7 @@ public class Main {
         if (window.isKeyPressed(GLFW_KEY_A)) {
             if (cameraMode == 2) {
                 cameraMode2.moveLeft(move);
-            } else  {
+            } else {
                 Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
                 character.get(0).translateObject(-characterPos.x, -characterPos.y, -characterPos.z);
                 character.get(0).rotateObject((float) Math.toRadians(2), 0f, 1f, 0f);
@@ -1354,7 +1357,7 @@ public class Main {
                 System.out.println("currdegre: " + currDegree);
                 float limitBawah = 82f + angleFPPY;
                 float limitAtas = 271f + angleFPPY;
-                if (currDegree.y < limitBawah || currDegree.y > limitAtas ) {
+                if (currDegree.y < limitBawah || currDegree.y > limitAtas) {
                     cameraMode1.addRotation(0, -degreeY);
                 }
 
@@ -1423,6 +1426,7 @@ public class Main {
 
         switch (cameraMode) {
             case 0 -> {
+                System.out.println(character.get(0).getCenterPoint());
                 maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
                 maincamera.setPosition(cameraMode0.getPosition().x, cameraMode0.getPosition().y, cameraMode0.getPosition().z);
             }
@@ -1431,6 +1435,7 @@ public class Main {
                 maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
             }
             case 2 -> {
+                System.out.println(maincamera.getPosition().x + ", " + maincamera.getPosition().y + ", " +maincamera.getPosition().z);
                 maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
                 maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
             }
@@ -1554,7 +1559,7 @@ public class Main {
             input();
 
             Random random = new Random();
-            if (random.nextFloat() >= 0.98){
+            if (random.nextFloat() >= 0.98) {
                 totem.get(1).getChildObject().get(0).setLightObject(!totem.get(1).isLightObject());
                 totem.get(1).setLightObject(!totem.get(1).isLightObject());
             }
