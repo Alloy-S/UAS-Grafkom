@@ -41,7 +41,7 @@ public class Main {
     private float angleFPPX = 0;
     private float angleFPPY = 0;
     Vector3f TPPOffset = new Vector3f(0.0f, 1.2f, 0f);
-    Vector3f FPPOffset = new Vector3f(0.f, 1.4f, -0.3f);
+    Vector3f FPPOffset = new Vector3f(0.f, 1.05f, -0.3f);
     int cameraMode = 0;
     SkyBoxCube skybox;
     boolean goIn = false;
@@ -1027,7 +1027,7 @@ public class Main {
                 new ArrayList<>(),
                 new Vector4f(0.590f, 0.303f, 0.0354f, 1.0f),
                 "resources/model/Totem/base_totem.obj",
-                true
+                false
         ));
 
 
@@ -1039,7 +1039,7 @@ public class Main {
                 new ArrayList<>(),
                 new Vector4f(0.415f, 0.880f, 0.0352f, 1.0f),
                 "resources/model/Totem/totem.obj",
-                true
+                false
         ));
 
         totem.get(1).translateObject(2.8171f, -0.15f ,-20.5927f);
@@ -1135,16 +1135,18 @@ public class Main {
                 false
         ));
 //        character2.get(0).scaleObject(0.2f, );
-        character2.get(0).translateObject(0f, 2f, 0f);
+        character2.get(0).translateObject(0f, 1.95f, 0f);
 
 
         character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
         character.get(0).rotation += 180;
-        character.get(0).translateObject(5f, 0f, 0f);
+        character.get(0).translateObject(10f, 0f, 0f);
 
         float theta = character.get(0).rotation + angleAroundPlayer;
         float offsetX = (float) (distanceCamera * Math.sin(Math.toRadians(theta)));
         float offsetZ = (float) (distanceCamera * Math.cos(Math.toRadians(theta)));
+        float offsetX1 = (float) (FPPOffset.z * Math.sin(Math.toRadians(theta)));
+        float offsetZ1 = (float) (FPPOffset.z * Math.cos(Math.toRadians(theta)));
 //            System.out.println(character.get(0).getCenterPoint());
 //        System.out.println(offsetX + ", " + offsetZ);
 //        TPP
@@ -1153,8 +1155,8 @@ public class Main {
         cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
 
 //        FPP
-        cameraMode1.setRotation(0, 0);
-        cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) + FPPOffset.x, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) + FPPOffset.z);
+        cameraMode1.setRotation(0, (float) Math.toRadians(180));
+        cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
 //        Free Cam
         cameraMode2.setRotation(0, 0);
         cameraMode2.setPosition(0f, 5f, 0f);
@@ -1164,6 +1166,10 @@ public class Main {
         //set camera 4
         cameraMode4.setRotation((float) Math.toRadians(35), (float) Math.toRadians(130));
         cameraMode4.setPosition(-10f, 13.96f, -8.866f);
+
+//        camera 5
+        cameraMode5.setRotation(0, (float) Math.toRadians(180));
+        cameraMode5.setPosition(0f, 0f, -15f);
 //        set main camera
         maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
         maincamera.setPosition(cameraMode0.getPosition().get(0), cameraMode0.getPosition().get(1), cameraMode0.getPosition().get(2));
@@ -1172,7 +1178,7 @@ public class Main {
     boolean collision;
 
     public void input() {
-        System.out.println(maincamera.getPosition());
+//        System.out.println(maincamera.getPosition());
         float move = 0.1f;
 //        System.out.println("camera mode: " + cameraMode);
         float dx = (float) (move * Math.sin(Math.toRadians(character.get(0).rotation)));
@@ -1221,9 +1227,9 @@ public class Main {
         }
 
         if (window.isKeyPressed(GLFW_KEY_A)) {
-            if (cameraMode >= 2) {
+            if (cameraMode == 2) {
                 cameraMode2.moveLeft(move);
-            } else {
+            } else if(cameraMode == 0 || cameraMode == 1) {
                 Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
                 character.get(0).translateObject(-characterPos.x, -characterPos.y, -characterPos.z);
                 character.get(0).rotateObject((float) Math.toRadians(2), 0f, 1f, 0f);
@@ -1236,6 +1242,7 @@ public class Main {
                 cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
 
 //                System.out.println(-character.get(0).rotation + ", " + cameraMode1.getRotation().y);
+                angleFPPY -= 2;
                 cameraMode1.addRotation(0, (float) Math.toRadians(-2));
                 cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
             }
@@ -1243,20 +1250,21 @@ public class Main {
 
         if (window.isKeyPressed(GLFW_KEY_D)) {
 
-            if (cameraMode >= 2) {
+            if (cameraMode == 2) {
                 cameraMode2.moveRight(move);
-            } else {
+            } else if(cameraMode == 0 || cameraMode == 1) {
                 Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
                 character.get(0).translateObject(-characterPos.x, -characterPos.y, -characterPos.z);
                 character.get(0).rotateObject((float) Math.toRadians(-2), 0f, 1f, 0f);
                 character.get(0).rotation -= 2;
                 character.get(0).translateObject(characterPos.x, characterPos.y, characterPos.z);
+
 //            System.out.println(character.get(0).getCenterPoint());
 //            System.out.println(offsetX + ", " + offsetZ);
                 cameraMode0.setRotation(cameraMode0.getRotation().x, (float) Math.toRadians(180 - theta));
                 cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
 
-
+                angleFPPY += 2;
                 cameraMode1.addRotation(0, (float) Math.toRadians(2));
                 cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
             }
@@ -1287,13 +1295,17 @@ public class Main {
                 float degreeY = (float) Math.toRadians(displVec.y * 0.1f);
                 cameraMode1.addRotation(degreeX, degreeY);
                 angleFPPY += degreeY;
+//                angleFPPX += degreeX;
                 Vector2f currDegree = new Vector2f((float) Math.toDegrees(cameraMode1.getRotation().x), (float) Math.toDegrees(cameraMode1.getRotation().y));
-//                System.out.println("currdegre: " + currDegree);
-                if (currDegree.y < -89f || currDegree.y > 89f ) {
+                System.out.println("currdegre: " + currDegree);
+                float limitBawah = 82f + angleFPPY;
+                float limitAtas = 271f + angleFPPY;
+                if (currDegree.y < limitBawah || currDegree.y > limitAtas ) {
                     cameraMode1.addRotation(0, -degreeY);
                 }
 
-                if (currDegree.x < -20f || currDegree.x > 89f ) {
+//                System.out.println("bawah: " + limitBawah + ", atas: " + limitAtas);
+                if (currDegree.x < -20f || currDegree.x > 89f) {
                     cameraMode1.addRotation(-degreeX, 0);
                 }
             } else if (cameraMode == 2) {
@@ -1305,14 +1317,14 @@ public class Main {
         }
 
         if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
-            if (cameraMode >= 2) {
+            if (cameraMode == 2) {
                 cameraMode2.moveUp(move);
             }
 
         }
 
         if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
-            if (cameraMode >= 2) {
+            if (cameraMode == 2) {
                 cameraMode2.moveDown(move);
             }
 
@@ -1345,6 +1357,9 @@ public class Main {
 
         if (window.isKeyPressed(GLFW_KEY_5)) {
             cameraMode = 4;
+        }
+        if (window.isKeyPressed(GLFW_KEY_6)) {
+            cameraMode = 5;
         }
 
         if (window.getMouseInput().getScroll().y != 0) {
@@ -1379,6 +1394,11 @@ public class Main {
             case 4 -> {
                 maincamera.setRotation(cameraMode4.getRotation().x, cameraMode4.getRotation().y);
                 maincamera.setPosition(cameraMode4.getPosition().x, cameraMode4.getPosition().y, cameraMode4.getPosition().z);
+            }
+
+            case 5 -> {
+                maincamera.setRotation(cameraMode5.getRotation().x, cameraMode5.getRotation().y);
+                maincamera.setPosition(cameraMode5.getPosition().x, cameraMode5.getPosition().y, cameraMode5.getPosition().z);
             }
         }
     }
