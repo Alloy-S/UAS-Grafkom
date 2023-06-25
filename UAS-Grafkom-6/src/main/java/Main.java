@@ -1182,9 +1182,9 @@ public class Main {
                 "resources/model/Char 2/char2_mulut.obj",
                 false
         ));
-        character2.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
+        character2.get(0).rotateObject((float) Math.toRadians(135), 0f, 1f, 0f);
         character2.get(0).rotation += 180;
-        character2.get(0).translateObject(0f, 1.95f, 2.0f);
+        character2.get(0).translateObject(-2f, 1.95f, 2.1f);
 
 
         character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
@@ -1451,10 +1451,15 @@ public class Main {
 
             case 5 -> {
                 System.out.println(cameraMode5.getPosition().x + ", " + cameraMode5.getPosition().y + ", " + cameraMode5.getPosition().z);
-                if (cameraMode5.getPosition().y < 5.2f) {
+                if (cameraMode5.getPosition().y < 4.2f) {
                     cameraMode5.moveForward(0.025f);
                     cameraMode5.addRotation((float) Math.toRadians(-0.1), 0f);
+                } else {
+                    cameraMode5.setRotation((float) Math.toRadians(0), (float) Math.toRadians(180));
+                    cameraMode5.setPosition(0f, 0f, -30f);
+                    cameraMode = 3;
                 }
+
                 maincamera.setRotation(cameraMode5.getRotation().x, cameraMode5.getRotation().y);
                 maincamera.setPosition(cameraMode5.getPosition().x, cameraMode5.getPosition().y, cameraMode5.getPosition().z);
             }
