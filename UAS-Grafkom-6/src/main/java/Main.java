@@ -1323,6 +1323,12 @@ public class Main {
                 insideRing = true;
                 System.out.println("masuk");
                 character.get(0).translateObject(-characterPos.x, 1.1f, -characterPos.z);
+//                tpp update
+                cameraMode0.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
+                cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
+//              fpp update
+//                cameraMode1.addRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
+                cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
                 goIn = false;
             }
         }
