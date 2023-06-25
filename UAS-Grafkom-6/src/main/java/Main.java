@@ -27,18 +27,11 @@ public class Main {
     Camera cameraMode2 = new Camera();
     private MouseInput mouseInput;
     Projection projection = new Projection(window.getWidth(), window.getHeight());
-    float distance = 1f;
-    float angle = 0f;
-    float rotation = (float) Math.toRadians(1f);
-    float move = 0.01f;
-    List<Float> temp;
     private float distanceCamera = 2f;
     private float angleAroundPlayer = 0;
-    private float picth = 10;
     Vector3f TPPOffset = new Vector3f(0.0f, 1.2f, 0f);
     Vector3f FPPOffset = new Vector3f(0.f, 1.4f, -0.3f);
     int cameraMode = 0;
-    private float lastFrameTime;
     SkyBoxCube skybox;
 
     public void run() throws IOException {
@@ -70,7 +63,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.865f, 0.990f, 0.782f, 1.0f),
-                "resources/model/Stage/stage_outside.obj"
+                "resources/model/Stage/stage_outside.obj",
+                false
         ));
         //Stage inside
         objectObj.add(new Model(
@@ -80,7 +74,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/Stage/stage_inside.obj"
+                "resources/model/Stage/stage_inside.obj",
+                false
         ));
         //Ring Side
         ring.add(new Model(
@@ -90,7 +85,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.500f, 0.442f, 0.440f, 1.0f),
-                "resources/model/Ring/ring_side.obj"
+                "resources/model/Ring/ring_side.obj",
+                false
         ));
 
         //Ring Top
@@ -101,7 +97,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
-                "resources/model/Ring/ring_top.obj"
+                "resources/model/Ring/ring_top.obj",
+                false
         ));
         //Ring Stair 1
         stair.add(new Model(
@@ -111,7 +108,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
-                "resources/model/Ring/stairL_point.obj"
+                "resources/model/Ring/stairL_point.obj",
+                false
         ));
         stair.get(0).translateObject(3.41534f, -0.05f, -3.56649f);
 
@@ -123,7 +121,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
-                "resources/model/Ring/stairR_point.obj"
+                "resources/model/Ring/stairR_point.obj",
+                false
         ));
         stair.get(1).translateObject(-3.45392f, -0.05f, 3.54823f);
         //Ring Pole
@@ -134,7 +133,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.0600f, 0.00780f, 0.00600f, 1.0f),
-                "resources/model/Ring/ring_pole.obj"
+                "resources/model/Ring/ring_pole.obj",
+                false
         ));
         //Ring Connector
         ring.add(new Model(
@@ -144,7 +144,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.430f, 0.434f, 0.434f, 1.0f),
-                "resources/model/Ring/ring_connector.obj"
+                "resources/model/Ring/ring_connector.obj",
+                false
         ));
         //Ring Cushion
         ring.add(new Model(
@@ -154,7 +155,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/Ring/ring_connector.obj"
+                "resources/model/Ring/ring_connector.obj",
+                false
         ));
 
         //Ring Net
@@ -165,7 +167,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
-                "resources/model/Ring/ring_net.obj"
+                "resources/model/Ring/ring_net.obj",
+                false
         ));
 
         //Barrier
@@ -177,7 +180,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(0).translateObject(1.27622f, -0.36f, -21.1026f);
         //2
@@ -188,7 +192,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(1).translateObject(1.27622f, -0.36f, -18.7194f);
         //3
@@ -199,7 +204,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(2).translateObject(1.27622f, -0.36f, -16.3464f);
         //4
@@ -210,7 +216,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(3).translateObject(1.27622f, -0.36f, -13.979f);
         //5
@@ -221,7 +228,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(4).translateObject(1.27622f, -0.36f, -11.6362f);
         //6
@@ -232,7 +240,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(5).translateObject(1.27622f, -0.36f, -9.21208f);
 //        7
@@ -243,7 +252,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(6).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(6).translateObject(2.30669f, -0.36f, -7.86746f);
@@ -255,7 +265,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(7).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(7).translateObject(4.65895f, -0.36f, -7.86746f);
@@ -267,7 +278,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(8).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(8).translateObject(6.93514f, -0.36f, -7.86746f);
@@ -279,7 +291,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(9).translateObject(8.34971f, -0.36f, -6.41871f);
         //11
@@ -290,7 +303,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(10).translateObject(8.34971f, -0.36f, -4.06022f);
         //12
@@ -301,7 +315,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(11).translateObject(8.34971f, -0.36f, -1.72914f);
         //13
@@ -312,7 +327,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(12).translateObject(8.34971f, -0.36f, 0.61934f);
         //14
@@ -323,7 +339,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(13).translateObject(8.34971f, -0.36f, 2.98676f);
         //15
@@ -334,7 +351,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(14).translateObject(8.34971f, -0.36f, 5.32952f);
         //16
@@ -345,7 +363,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(15).translateObject(8.34971f, -0.36f, 7.66422f);
         //17
@@ -357,7 +376,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(16).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(16).translateObject(6.88403f, -0.36f, 8.81884f);
@@ -369,7 +389,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(17).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(17).translateObject(4.53554f, -0.36f, 8.81884f);
@@ -381,7 +402,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(18).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(18).translateObject(2.18329f, -0.36f, 8.81884f);
@@ -393,7 +415,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(19).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(19).translateObject(-0.165194f, -0.36f, 8.81884f);
@@ -405,7 +428,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(20).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(20).translateObject(-2.53262f, -0.36f, 8.81884f);
@@ -417,7 +441,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(21).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(21).translateObject(-4.87966f, -0.36f, 8.81884f);
@@ -429,7 +454,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(22).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(22).translateObject(-7.16141f, -0.36f, 8.81884f);
@@ -441,7 +467,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(23).translateObject(-8.45367f, -0.36f, 7.62012f);
         //25
@@ -452,7 +479,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(24).translateObject(-8.45367f, -0.36f, 5.28546f);
         //26
@@ -463,7 +491,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(25).translateObject(-8.45367f, -0.36f, 2.94268f);
         //27
@@ -474,7 +503,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(26).translateObject(-8.45367f, -0.36f, 0.57526f);
         //28
@@ -485,7 +515,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(27).translateObject(-8.45367f, -0.36f, -1.77323f);
         //29
@@ -496,7 +527,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(28).translateObject(-8.45367f, -0.36f, -4.12548f);
         //30
@@ -507,7 +539,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(29).translateObject(-8.45367f, -0.36f, -6.47396f);
         //31
@@ -518,7 +551,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(30).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(30).translateObject(-7.20474f, -0.36f, -7.85814f);
@@ -530,7 +564,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(31).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(31).translateObject(-4.87008f, -0.36f, -7.85814f);
@@ -542,7 +577,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(32).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
         barier.get(32).translateObject(-2.5273f, -0.36f, -7.85814f);
@@ -554,7 +590,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(33).translateObject(-1.47143f, -0.36f, -9.25968f);
         //35
@@ -565,7 +602,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(34).translateObject(-1.47143f, -0.36f, -11.5943f);
         //36
@@ -576,7 +614,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(35).translateObject(-1.47143f, -0.36f, -13.9371f);
         //37
@@ -587,7 +626,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(36).translateObject(-1.47324f, -0.36f, -16.3568f);
         //38
@@ -598,7 +638,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(37).translateObject(-1.47143f, -0.36f, -18.7749f);
         //39
@@ -609,7 +650,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.530f, 0.504f, 0.504f, 1.0f),
-                "resources/model/Barier/barier.obj"
+                "resources/model/Barier/barier.obj",
+                false
         ));
         barier.get(38).translateObject(-1.47143f, -0.36f, -21.1495f);
         //Chair
@@ -621,7 +663,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/Chair/chairR.obj"
+                "resources/model/Chair/chairR.obj",
+                false
         ));
         //L
         objectObj.add(new Model(
@@ -631,7 +674,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/Chair/chairL.obj"
+                "resources/model/Chair/chairL.obj",
+                false
         ));
         //F
         objectObj.add(new Model(
@@ -641,7 +685,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.260f, 0.232f, 0.231f, 1.0f),
-                "resources/model/Chair/chairF.obj"
+                "resources/model/Chair/chairF.obj",
+                false
         ));
 
         //Truss
@@ -653,7 +698,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.480f, 0.485f, 0.485f, 1.0f),
-                "resources/model/Truss/truss_RF.obj"
+                "resources/model/Truss/truss_RF.obj",
+                false
         ));
         //LF
         objectObj.add(new Model(
@@ -663,7 +709,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.480f, 0.485f, 0.485f, 1.0f),
-                "resources/model/Truss/truss_LF.obj"
+                "resources/model/Truss/truss_LF.obj",
+                false
         ));
         //RB
         objectObj.add(new Model(
@@ -673,7 +720,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.480f, 0.485f, 0.485f, 1.0f),
-                "resources/model/Truss/truss_RB.obj"
+                "resources/model/Truss/truss_RB.obj",
+                false
         ));
         //LB
         objectObj.add(new Model(
@@ -683,7 +731,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.480f, 0.485f, 0.485f, 1.0f),
-                "resources/model/Truss/truss_LB.obj"
+                "resources/model/Truss/truss_LB.obj",
+                false
         ));
         //Pillar
         objectObj.add(new Model(
@@ -693,7 +742,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.480f, 0.485f, 0.485f, 1.0f),
-                "resources/model/Truss/truss_pillar.obj"
+                "resources/model/Truss/truss_pillar.obj",
+                false
         ));
         //Lighting Outside
         objectObj.add(new Model(
@@ -703,7 +753,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.0200f, 0.0154f, 0.0154f, 1.0f),
-                "resources/model/Truss/truss_light_outside.obj"
+                "resources/model/Truss/truss_light_outside.obj",
+                false
         ));
         //Lighting Inside
         objectObj.add(new Model(
@@ -713,7 +764,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.990f, 0.921f, 0.921f, 1.0f),
-                "resources/model/Truss/truss_light_inside.obj"
+                "resources/model/Truss/truss_light_inside.obj",
+                true
         ));
 
 //            Character
@@ -724,7 +776,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.740f, 0.698f, 0.511f, 1.0f),
-                "resources/model/Char/char_body.obj"
+                "resources/model/Char/char_body.obj",
+                false
         ));
 
         character.get(0).getChildObject().add(new Model(
@@ -734,7 +787,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.258f, 0.990f, 0.129f, 1.0f),
-                "resources/model/Char/char_green.obj"
+                "resources/model/Char/char_green.obj",
+                false
         ));
         character.get(0).getChildObject().add(new Model(
                 Arrays.asList(
@@ -743,7 +797,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.220f, 0.534f, 0.630f, 1.0f),
-                "resources/model/Char/char_jeans.obj"
+                "resources/model/Char/char_jeans.obj",
+                false
         ));
         character.get(0).getChildObject().add(new Model(
                 Arrays.asList(
@@ -752,7 +807,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.870f, 0.400f, 0.348f, 1.0f),
-                "resources/model/Char/char_mouth.obj"
+                "resources/model/Char/char_mouth.obj",
+                false
         ));
         character.get(0).getChildObject().add(new Model(
                 Arrays.asList(
@@ -761,7 +817,8 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.880f, 0.809f, 0.801f, 1.0f),
-                "resources/model/Char/char_eye.obj"
+                "resources/model/Char/char_eye.obj",
+                false
         ));
 
         character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
@@ -773,8 +830,9 @@ public class Main {
         float offsetX = (float) (distanceCamera * Math.sin(Math.toRadians(theta)));
         float offsetZ = (float) (distanceCamera * Math.cos(Math.toRadians(theta)));
 //            System.out.println(character.get(0).getCenterPoint());
-        System.out.println(offsetX + ", " + offsetZ);
+//        System.out.println(offsetX + ", " + offsetZ);
 //        TPP
+        float picth = 10;
         cameraMode0.setRotation((float) Math.toRadians(picth), (float) Math.toRadians(180 - theta));
         cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
 
