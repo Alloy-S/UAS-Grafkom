@@ -1217,8 +1217,8 @@ public class Main {
         cameraMode4.setPosition(-10f, 13.96f, -8.866f);
 
 //        camera 5
-        cameraMode5.setRotation(0, (float) Math.toRadians(180));
-        cameraMode5.setPosition(0f, 0f, -15f);
+        cameraMode5.setRotation((float) Math.toRadians(0), (float) Math.toRadians(180));
+        cameraMode5.setPosition(0f, 0f, -30f);
 //        set main camera
         maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
         maincamera.setPosition(cameraMode0.getPosition().get(0), cameraMode0.getPosition().get(1), cameraMode0.getPosition().get(2));
@@ -1444,6 +1444,11 @@ public class Main {
             }
 
             case 5 -> {
+                System.out.println(cameraMode5.getPosition().x + ", " + cameraMode5.getPosition().y + ", " + cameraMode5.getPosition().z);
+                if (cameraMode5.getPosition().y < 5.2f) {
+                    cameraMode5.moveForward(0.025f);
+                    cameraMode5.addRotation((float) Math.toRadians(-0.1), 0f);
+                }
                 maincamera.setRotation(cameraMode5.getRotation().x, cameraMode5.getRotation().y);
                 maincamera.setPosition(cameraMode5.getPosition().x, cameraMode5.getPosition().y, cameraMode5.getPosition().z);
             }
