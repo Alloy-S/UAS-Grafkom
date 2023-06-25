@@ -28,10 +28,13 @@ public class Main {
     Camera cameraMode1 = new Camera();
     Camera cameraMode2 = new Camera();
     Camera cameraMode3 = new Camera();
+    Camera cameraMode4 = new Camera();
+    Camera cameraMode5 = new Camera();
     private MouseInput mouseInput;
     Projection projection = new Projection(window.getWidth(), window.getHeight());
     private float distanceCamera = 2f;
     private float angleAroundPlayer = 0;
+    private float angle360 = 0;
     private float angleFPPX = 0;
     private float angleFPPY = 0;
     Vector3f TPPOffset = new Vector3f(0.0f, 1.2f, 0f);
@@ -931,9 +934,12 @@ public class Main {
 //        Free Cam
         cameraMode2.setRotation(0, 0);
         cameraMode2.setPosition(0f, 5f, 0f);
-//        set camera 4
-        cameraMode3.setRotation(0, 0);
-        cameraMode3.setPosition(0f, 2.5f, 4f);
+//        set camera 3
+        cameraMode3.setRotation((float) Math.toRadians(picth), 0);
+        cameraMode3.setPosition(0f, 5f, 10f);
+        //set camera 4
+        cameraMode4.setRotation((float) Math.toRadians(35), (float) Math.toRadians(130));
+        cameraMode4.setPosition(-10f, 13.96f, -8.866f);
 //        set main camera
         maincamera.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
         maincamera.setPosition(cameraMode0.getPosition().get(0), cameraMode0.getPosition().get(1), cameraMode0.getPosition().get(2));
@@ -942,6 +948,7 @@ public class Main {
     boolean collision;
 
     public void input() {
+        System.out.println(maincamera.getPosition());
         float move = 0.1f;
 //        System.out.println("camera mode: " + cameraMode);
         float dx = (float) (move * Math.sin(Math.toRadians(character.get(0).rotation)));
@@ -1046,7 +1053,7 @@ public class Main {
                 float angel = (float) Math.toRadians(displVec.y * 3f);
                 cameraMode0.addRotation(0, angel);
                 angleAroundPlayer += angel;
-                System.out.println(cameraMode0.getRotation());
+//                System.out.println(cameraMode0.getRotation());
                 cameraMode0.setRotation(cameraMode0.getRotation().x, (float) Math.toRadians(180 - theta));
                 cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
             } else if (cameraMode == 1) {
@@ -1067,7 +1074,7 @@ public class Main {
             } else if (cameraMode == 2) {
                 Vector2f displVec = window.getMouseInput().getDisplVec();
                 cameraMode2.addRotation((float) Math.toRadians(displVec.x * 0.1f), (float) Math.toRadians(displVec.y * 0.1f));
-                System.out.println(cameraMode2.getRotation());
+//                System.out.println(cameraMode2.getRotation());
             }
 
         }
@@ -1094,7 +1101,7 @@ public class Main {
 
         if (window.isKeyPressed(GLFW_KEY_2)) {
             cameraMode = 1;
-            System.out.println("1");
+//            System.out.println("1");
             maincamera.setRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
             maincamera.setPosition(cameraMode1.getPosition().x, cameraMode1.getPosition().y, cameraMode1.getPosition().z);
         }
@@ -1109,6 +1116,10 @@ public class Main {
             cameraMode = 3;
             maincamera.setRotation(cameraMode3.getRotation().x, cameraMode3.getRotation().y);
             maincamera.setPosition(cameraMode3.getPosition().x, cameraMode3.getPosition().y, cameraMode3.getPosition().z);
+        }
+
+        if (window.isKeyPressed(GLFW_KEY_5)) {
+            cameraMode = 4;
         }
 
         if (window.getMouseInput().getScroll().y != 0) {
@@ -1128,6 +1139,21 @@ public class Main {
             case 2 -> {
                 maincamera.setRotation(cameraMode2.getRotation().x, cameraMode2.getRotation().y);
                 maincamera.setPosition(cameraMode2.getPosition().x, cameraMode2.getPosition().y, cameraMode2.getPosition().z);
+            }
+            case 3 -> {
+                cameraMode3.addRotation(0, (float) Math.toRadians(0.6));
+                angle360 += 0.6;
+                theta = angle360;
+                offsetX = (float) (10 * Math.sin(Math.toRadians(theta)));
+                offsetZ = (float) (10 * Math.cos(Math.toRadians(theta)));
+                cameraMode3.setRotation(cameraMode3.getRotation().x, (float) Math.toRadians(180 - theta));
+                cameraMode3.setPosition(0 - offsetX, 5, 0 - offsetZ);
+                maincamera.setRotation(cameraMode3.getRotation().x, cameraMode3.getRotation().y);
+                maincamera.setPosition(cameraMode3.getPosition().x, cameraMode3.getPosition().y, cameraMode3.getPosition().z);
+            }
+            case 4 -> {
+                maincamera.setRotation(cameraMode4.getRotation().x, cameraMode4.getRotation().y);
+                maincamera.setPosition(cameraMode4.getPosition().x, cameraMode4.getPosition().y, cameraMode4.getPosition().z);
             }
         }
     }
@@ -1154,7 +1180,7 @@ public class Main {
             float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
 
             if (distance < 4.25f) {
-                System.out.println("nabrak");
+//                System.out.println("nabrak");
 //                System.out.println(objPos + " = " + distance);
                 return true;
             }
