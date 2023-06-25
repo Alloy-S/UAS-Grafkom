@@ -1325,7 +1325,6 @@ public class Main {
             Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
             if (!insideRing && goIn) {
                 insideRing = true;
-                System.out.println("masuk");
                 character.get(0).translateObject(-characterPos.x, 1.1f, -characterPos.z);
 //                tpp update
                 cameraMode0.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
@@ -1334,6 +1333,18 @@ public class Main {
 //                cameraMode1.addRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
                 cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
                 goIn = false;
+            }
+            if(insideRing && goOut){
+                insideRing = false;
+                character.get(0).translateObject(-characterPos.x, -1.1f, -7f);
+                goOut = false;
+//                tpp update
+                cameraMode0.setRotation(cameraMode0.getRotation().x, cameraMode0.getRotation().y);
+                cameraMode0.setPosition(character.get(0).getCenterPoint().get(0) - offsetX, character.get(0).getCenterPoint().get(1) + TPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ);
+//              fpp update
+//                cameraMode1.addRotation(cameraMode1.getRotation().x, cameraMode1.getRotation().y);
+                cameraMode1.setPosition(character.get(0).getCenterPoint().get(0) - offsetX1, character.get(0).getCenterPoint().get(1) + FPPOffset.y, character.get(0).getCenterPoint().get(2) - offsetZ1);
+                goOut = false;
             }
         }
 
@@ -1486,7 +1497,7 @@ public class Main {
             Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
             float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
 
-            if (distance < 0.95) {
+            if (distance < 1.1) {
 //                System.out.println("nabrak");
 //                System.out.println(objPos + " = " + distance);
                 return true;
@@ -1501,6 +1512,9 @@ public class Main {
             if (distance < 1f) {
 //                System.out.println("nabrak");
 //                System.out.println(objPos + " = " + distance);
+                if (insideRing) {
+                    goOut = true;
+                }
                 return true;
             }
 //            System.out.println(objPos + " = " + distance);
@@ -1510,12 +1524,15 @@ public class Main {
             Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
             float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
 
-            if (distance < 0.95) {
+            if (distance < 1.1) {
 //                System.out.println("nabrak");
 //                System.out.println(objPos + " = " + distance);
-                goIn = true;
+                if (!insideRing) {
+                    goIn = true;
+                }
                 return true;
             }
+
 //            System.out.println(objPos + " = " + distance);
         }
 //        System.out.println("-----------------------");
@@ -1524,9 +1541,12 @@ public class Main {
             Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
             float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
 
-            if (distance < 0.95) {
+            if (distance < 0.9) {
 //                System.out.println("nabrak");
 //                System.out.println(objPos + " = " + distance);
+                if(insideRing) {
+                    goOut = true;
+                }
                 return true;
             }
 //            System.out.println(objPos + " = " + distance);
@@ -1536,7 +1556,7 @@ public class Main {
             Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
             float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
 
-            if (distance < 0.7) {
+            if (distance < 1.1f) {
 //                System.out.println("nabrak");
 //                System.out.println(objPos + " = " + distance);
                 return true;
