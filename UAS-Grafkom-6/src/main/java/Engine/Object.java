@@ -69,10 +69,17 @@ public class Object extends ShaderProgram{
                 new Vector3f(5f, 2f, 5f),
                 new Vector3f(-5f, 2f, 5f),
                 new Vector3f(5f, 2f, -5f),
-                new Vector3f(-5f, 2f, -5f)
+                new Vector3f(-5f, 2f, -5f),
+                new Vector3f(22f, 8f, 10f),
+                new Vector3f(-22f, 8f, 10f),
+                new Vector3f(22f, 8f, -5f),
+                new Vector3f(-22f, 8f, -5f),
+                new Vector3f(0f, 8f, 25f),
+                new Vector3f(3f, 0.85f, -25f),
+                new Vector3f(-3f, 0.85f, -25f),
         };
-        lightSwitchDirectionX = new float[]{1f,-1f,1f,-1f};
-        lightSwitchDirectionZ = new float[]{1f,1f,-1f,-1f};
+        lightSwitchDirectionX = new float[]{1f,-1f,1f,-1f,0,0,0,0,0,0,0};
+        lightSwitchDirectionZ = new float[]{1f,1f,-1f,-1f,0,0,0,0,0,0,0};
 
         for(int i = 0; i < _pointLightPositions.length; i++){
             uniformsMap.createUniform("pointLight["+i+"].position");
@@ -135,9 +142,9 @@ public class Object extends ShaderProgram{
             uniformsMap.setUniform("dirLight.specular", new Vector3f(0.5f, 0.5f, 0.5f));
         } else {
             uniformsMap.setUniform("dirLight.direction", new Vector3f(0f, 0f, 0f));
-            uniformsMap.setUniform("dirLight.ambient", new Vector3f(1.8f, 1.8f, 1.8f));
-            uniformsMap.setUniform("dirLight.diffuse", new Vector3f(1.6f, 1.6f, 1.6f));
-            uniformsMap.setUniform("dirLight.specular", new Vector3f(1.6f, 1.6f, 1.6f));
+            uniformsMap.setUniform("dirLight.ambient", new Vector3f(1.4f, 1.4f, 1.4f));
+            uniformsMap.setUniform("dirLight.diffuse", new Vector3f(1.2f, 1.2f, 1.2f));
+            uniformsMap.setUniform("dirLight.specular", new Vector3f(1.2f, 1.2f, 1.2f));
         }
 
         for (int i = 0; i < _pointLightPositions.length; i++) {
@@ -156,8 +163,13 @@ public class Object extends ShaderProgram{
             } else {
                 uniformsMap.setUniform("pointLight[" + i + "].ambient", new Vector3f(0.4f, 0.4f, 0.4f));
             }
-            uniformsMap.setUniform("pointLight[" + i + "].diffuse", new Vector3f(0.8f, 0.8f, 0.8f));
-            uniformsMap.setUniform("pointLight[" + i + "].specular", new Vector3f(0.5f, 0.5f, 0.5f));
+            if (i >= 9) {
+                uniformsMap.setUniform("pointLight[" + i + "].diffuse", new Vector3f(0.4f, 0.4f, 0.4f));
+                uniformsMap.setUniform("pointLight[" + i + "].specular", new Vector3f(0.2f, 0.2f, 0.2f));
+            } else {
+                uniformsMap.setUniform("pointLight[" + i + "].diffuse", new Vector3f(0.8f, 0.8f, 0.8f));
+                uniformsMap.setUniform("pointLight[" + i + "].specular", new Vector3f(0.5f, 0.5f, 0.5f));
+            }
             uniformsMap.setUniform("pointLight[" + i + "].constant", 1.0f);
             uniformsMap.setUniform("pointLight[" + i + "].linear", 0.09f);
             uniformsMap.setUniform("pointLight[" + i + "].quadratic", 0.032f);
