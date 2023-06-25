@@ -1226,7 +1226,7 @@ public class Main {
 
     public void input() {
 //        System.out.println(maincamera.getPosition());
-        float move = 0.1f;
+        float move = 0.05f;
 //        System.out.println("camera mode: " + cameraMode);
         float dx = (float) (move * Math.sin(Math.toRadians(character.get(0).rotation)));
         float dz = (float) (move * Math.cos(Math.toRadians(character.get(0).rotation)));
@@ -1237,7 +1237,7 @@ public class Main {
         float offsetZ1 = (float) (FPPOffset.z * Math.cos(Math.toRadians(theta)));
 
         if (window.isKeyPressed(GLFW_KEY_W)) {
-            if (cameraMode >= 2) {
+            if (cameraMode == 2) {
                 cameraMode2.moveForward(move);
             } else {
 
@@ -1256,7 +1256,7 @@ public class Main {
         }
         if (window.isKeyPressed(GLFW_KEY_S)) {
 
-            if (cameraMode >= 2) {
+            if (cameraMode == 2) {
                 cameraMode2.moveBackwards(move);
             } else {
 
@@ -1276,7 +1276,7 @@ public class Main {
         if (window.isKeyPressed(GLFW_KEY_A)) {
             if (cameraMode == 2) {
                 cameraMode2.moveLeft(move);
-            } else if(cameraMode == 0 || cameraMode == 1) {
+            } else  {
                 Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
                 character.get(0).translateObject(-characterPos.x, -characterPos.y, -characterPos.z);
                 character.get(0).rotateObject((float) Math.toRadians(2), 0f, 1f, 0f);
@@ -1299,7 +1299,7 @@ public class Main {
 
             if (cameraMode == 2) {
                 cameraMode2.moveRight(move);
-            } else if(cameraMode == 0 || cameraMode == 1) {
+            } else {
                 Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
                 character.get(0).translateObject(-characterPos.x, -characterPos.y, -characterPos.z);
                 character.get(0).rotateObject((float) Math.toRadians(-2), 0f, 1f, 0f);
