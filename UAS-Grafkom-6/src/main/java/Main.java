@@ -1188,7 +1188,7 @@ public class Main {
 
         character2.get(0).rotateObject((float) Math.toRadians(135), 0f, 1f, 0f);
         character2.get(0).rotation += 180;
-        character2.get(0).translateObject(-2f, 1.95f, 2.1f);
+        character2.get(0).translateObject(-2.15f, 1.95f, 2.35f);
 
 
 //        character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
