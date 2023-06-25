@@ -8,7 +8,6 @@ import org.lwjgl.opengl.GL;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.glClearColor;
@@ -18,11 +17,15 @@ public class Main {
     private Window window = new Window(1080, 1080, "Hello World");
     ArrayList<Object> objectObj = new ArrayList<>();
     ArrayList<Object> character = new ArrayList<>();
+    ArrayList<Object> character2 = new ArrayList<>();
     ArrayList<Object> barier = new ArrayList<>();
     ArrayList<Object> ring = new ArrayList<>();
+    ArrayList<Object> sideRing = new ArrayList<>();
     ArrayList<Object> stair = new ArrayList<>();
     ArrayList<Object> totem = new ArrayList<>();
     ArrayList<Object> container = new ArrayList<>();
+    ArrayList<Object> pole = new ArrayList<>();
+    ArrayList<Object> net = new ArrayList<>();
     Camera maincamera = new Camera();
     Camera cameraMode0 = new Camera();
     Camera cameraMode1 = new Camera();
@@ -41,6 +44,9 @@ public class Main {
     Vector3f FPPOffset = new Vector3f(0.f, 1.4f, -0.3f);
     int cameraMode = 0;
     SkyBoxCube skybox;
+    boolean goIn = false;
+    boolean goOut = false;
+    boolean insideRing = false;
 
     public void run() throws IOException {
 
@@ -85,17 +91,57 @@ public class Main {
                 "resources/model/Stage/stage_inside.obj",
                 false
         ));
-        //Ring Side
-        ring.add(new Model(
+        //SideRing
+        //L
+        sideRing.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.500f, 0.442f, 0.440f, 1.0f),
-                "resources/model/Ring/ring_side.obj",
+                "resources/model/Ring/ring_sideVertical.obj",
                 false
         ));
+        sideRing.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
+        sideRing.get(0).translateObject(3.25547f, 0.0f, -0.140957f);
+        //R
+        sideRing.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.500f, 0.442f, 0.440f, 1.0f),
+                "resources/model/Ring/ring_sideVertical.obj",
+                false
+        ));
+        sideRing.get(1).translateObject(-3.27045f, 0.0f, 0.138541f);
+        //B
+        sideRing.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.500f, 0.442f, 0.440f, 1.0f),
+                "resources/model/Ring/ring_sideHORIZONTAL.obj",
+                false
+        ));
+        sideRing.get(2).translateObject(-0.145017f, 0.0f, 3.40085f);
+        //F
+        sideRing.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.500f, 0.442f, 0.440f, 1.0f),
+                "resources/model/Ring/ring_sideHORIZONTAL.obj",
+                false
+        ));
+        sideRing.get(3).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
+        sideRing.get(3).translateObject(0.145017f, 0.0f, -3.38976f);
 
         //Ring Top
         ring.add(new Model(
@@ -166,18 +212,156 @@ public class Main {
                 "resources/model/Ring/ring_connector.obj",
                 false
         ));
+        //Ring Pole
+        //RF
+        pole.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.0600f, 0.00780f, 0.00600f, 1.0f),
+                "resources/model/Ring/pole_point.obj",
+                false
+        ));
+        pole.get(0).translateObject(-3.40388f, 1.05951f, -3.57681f);
+        //LF
+        pole.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.0600f, 0.00780f, 0.00600f, 1.0f),
+                "resources/model/Ring/pole_point.obj",
+                false
+        ));
+        pole.get(1).translateObject(3.39651f, 1.05951f, -3.57681f);
+        //RB
+        pole.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.0600f, 0.00780f, 0.00600f, 1.0f),
+                "resources/model/Ring/pole_point.obj",
+                false
+        ));
+        pole.get(2).translateObject(-3.40388f, 1.05951f, 3.57681f);
+        //LB
+        pole.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.0600f, 0.00780f, 0.00600f, 1.0f),
+                "resources/model/Ring/pole_point.obj",
+                false
+        ));
+        pole.get(3).translateObject(3.39651f, 1.05951f, 3.57681f);
 
         //Ring Net
-        ring.add(new Model(
+        //F
+        net.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
                 new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
-                "resources/model/Ring/ring_net.obj",
+                "resources/model/Ring/ring_netParts.obj",
                 false
         ));
+        net.get(0).translateObject(1.37081f, 1.78004f, -2.96735f);
+
+        net.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
+                "resources/model/Ring/ring_netParts.obj",
+                false
+        ));
+        net.get(1).translateObject(-1.44812f, 1.78004f, -2.96735f);
+
+        //B
+        net.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
+                "resources/model/Ring/ring_netParts.obj",
+                false
+        ));
+        net.get(2).translateObject(1.41448f, 1.78004f, 2.99452f);
+
+        net.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
+                "resources/model/Ring/ring_netParts.obj",
+                false
+        ));
+        net.get(3).translateObject(-1.40711f, 1.78004f, 2.99452f);
+        //Barrier
+        //R
+        net.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
+                "resources/model/Ring/ring_netParts2.obj",
+                false
+        ));
+        net.get(4).translateObject(-2.87052f, 1.78012f, 1.64151f);
+
+        net.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
+                "resources/model/Ring/ring_netParts3.obj",
+                false
+        ));
+        net.get(5).translateObject(-2.87048f, 1.78012f, -1.60665f);
+
+        //L
+        net.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
+                "resources/model/Ring/ring_netParts2.obj",
+                false
+        ));
+        net.get(6).translateObject(2.86315f, 1.78012f, 1.64583f);
+
+        net.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.970f, 0.979f, 0.980f, 1.0f),
+                "resources/model/Ring/ring_netParts3.obj",
+                false
+        ));
+        net.get(7).translateObject(2.86315f, 1.78012f, -1.60665f);
 
         //Barrier
         //1
@@ -861,14 +1045,14 @@ public class Main {
         totem.get(1).translateObject(2.8171f, -0.15f ,-20.5927f);
 
 
-//            Character
+        //Character JOHN CENA
         character.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.740f, 0.698f, 0.511f, 1.0f),
+                new Vector4f(0.970f, 0.868f, 0.766f, 1.0f),
                 "resources/model/Char/char_body.obj",
                 false
         ));
@@ -903,16 +1087,56 @@ public class Main {
                 "resources/model/Char/char_mouth.obj",
                 false
         ));
-        character.get(0).getChildObject().add(new Model(
+        character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
+        character.get(0).rotation += 180;
+        character.get(0).translateObject(5f, 0.8f, 0f);
+
+
+        //Character The ROCK
+        character2.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.880f, 0.809f, 0.801f, 1.0f),
-                "resources/model/Char/char_eye.obj",
+                new Vector4f(0.350f, 0.250f, 0.150f, 1.0f),
+                "resources/model/Char 2/char2_body.obj",
+                true
+        ));
+
+        character2.get(0).getChildObject().add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.980f, 0.0490f, 0.530f, 1.0f),
+                "resources/model/Char 2/char2_outfit.obj",
                 false
         ));
+        character2.get(0).getChildObject().add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.790f, 0.729f, 0.711f, 1.0f),
+                "resources/model/Char 2/char2_mata.obj",
+                false
+        ));
+        character2.get(0).getChildObject().add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.760f, 0.603f, 0.555f, 1.0f),
+                "resources/model/Char 2/char2_mulut.obj",
+                false
+        ));
+//        character2.get(0).scaleObject(0.2f, );
+        character2.get(0).translateObject(0f, 2f, 0f);
+
 
         character.get(0).rotateObject((float) Math.toRadians(180), 0f, 1f, 0f);
         character.get(0).rotation += 180;
@@ -1039,12 +1263,13 @@ public class Main {
         }
 
         if (mouseInput.isLeftButtonPressed()) {
-            if (cameraMode >= 2) {
-
-            } else {
-
+            Vector3f characterPos = new Vector3f(character.get(0).getCenterPoint().get(0), character.get(0).getCenterPoint().get(1), character.get(0).getCenterPoint().get(2));
+            if (!insideRing && goIn) {
+                insideRing = true;
+                System.out.println("masuk");
+                character.get(0).translateObject(-characterPos.x, 1.1f, -characterPos.z);
+                goIn = false;
             }
-
         }
 
         if (window.getMouseInput().isRightButtonPressed()) {
@@ -1187,11 +1412,48 @@ public class Main {
 //            System.out.println(objPos + " = " + distance);
         }
 
+        for (Object object : sideRing) {
+            Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
+            float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
+
+            if (distance < 1f) {
+//                System.out.println("nabrak");
+//                System.out.println(objPos + " = " + distance);
+                return true;
+            }
+//            System.out.println(objPos + " = " + distance);
+        }
+
         for (Object object : stair) {
             Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
             float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
 
             if (distance < 0.95) {
+//                System.out.println("nabrak");
+//                System.out.println(objPos + " = " + distance);
+                return true;
+            }
+//            System.out.println(objPos + " = " + distance);
+        }
+//        System.out.println("-----------------------");
+
+        for (Object object : net) {
+            Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
+            float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
+
+            if (distance < 0.95) {
+//                System.out.println("nabrak");
+//                System.out.println(objPos + " = " + distance);
+                return true;
+            }
+//            System.out.println(objPos + " = " + distance);
+        }
+
+        for (Object object : pole) {
+            Vector3f objPos = new Vector3f(object.getCenterPoint().get(0), object.getCenterPoint().get(1), object.getCenterPoint().get(2));
+            float distance = (float) Math.sqrt(Math.pow(objPos.x - characterPos.x, 2) + Math.pow(objPos.z - characterPos.z, 2));
+
+            if (distance < 0.7) {
 //                System.out.println("nabrak");
 //                System.out.println(objPos + " = " + distance);
                 return true;
@@ -1221,13 +1483,28 @@ public class Main {
             for (Object object : character) {
                 object.draw(maincamera, projection);
             }
-//            }
+
+            for (Object object : character2) {
+                object.draw(maincamera, projection);
+            }
 
             for (Object object : ring) {
                 object.draw(maincamera, projection);
             }
 
+            for (Object object : sideRing) {
+                object.draw(maincamera, projection);
+            }
+
             for (Object object : stair) {
+                object.draw(maincamera, projection);
+            }
+
+            for (Object object : pole) {
+                object.draw(maincamera, projection);
+            }
+
+            for (Object object : net) {
                 object.draw(maincamera, projection);
             }
 

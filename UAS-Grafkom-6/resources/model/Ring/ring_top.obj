@@ -1,7 +1,7 @@
 # Blender 3.5.1
 # www.blender.org
-mtllib stage_top.mtl
-o stage_top
+mtllib ring_top.mtl
+o ring_top
 v 3.297742 0.761095 3.463411
 v -0.019314 0.761095 3.463411
 v -3.336370 0.761095 3.463411
@@ -18,7 +18,7 @@ vn -0.0038 1.0000 0.0037
 vn 0.0038 1.0000 -0.0037
 vn -0.0038 1.0000 -0.0037
 s 0
-usemtl Material.009
+usemtl Material.030
 f 5//1 2//1 1//1
 f 2//1 9//1 3//1
 f 6//1 5//1 4//1
