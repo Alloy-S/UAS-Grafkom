@@ -1127,9 +1127,10 @@ public class Main {
             for (Object object : objectObj) {
                 object.draw(maincamera, projection);
             }
-
-            for (Object object : character) {
-                object.draw(maincamera, projection);
+            if(cameraMode != 1) {
+                for (Object object : character) {
+                    object.draw(maincamera, projection);
+                }
             }
 
             for (Object object : ring) {
