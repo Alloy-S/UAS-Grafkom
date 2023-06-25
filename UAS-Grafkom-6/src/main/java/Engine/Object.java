@@ -250,4 +250,12 @@ public class Object extends ShaderProgram{
             child.translateObject(scaleX,scaleY,scaleZ);
         }
     }
+
+    public boolean isLightObject() {
+        return lightObject;
+    }
+
+    public void setLightObject(boolean lightObject) {
+        this.lightObject = lightObject;
+    }
 }

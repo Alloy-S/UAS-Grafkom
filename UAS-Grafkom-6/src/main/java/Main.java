@@ -8,6 +8,7 @@ import org.lwjgl.opengl.GL;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.glClearColor;
@@ -1027,7 +1028,7 @@ public class Main {
                 new ArrayList<>(),
                 new Vector4f(0.590f, 0.303f, 0.0354f, 1.0f),
                 "resources/model/Totem/base_totem.obj",
-                false
+                true
         ));
 
 
@@ -1039,7 +1040,7 @@ public class Main {
                 new ArrayList<>(),
                 new Vector4f(1f, 0.84f, 0f, 1.0f),
                 "resources/model/Totem/totem.obj",
-                false
+                true
         ));
 
         totem.get(1).translateObject(2.8171f, -0.15f ,-20.5927f);
@@ -1547,6 +1548,12 @@ public class Main {
             GL.createCapabilities();
 
             input();
+
+            Random random = new Random();
+            if (random.nextFloat() >= 0.98){
+                totem.get(1).getChildObject().get(0).setLightObject(!totem.get(1).isLightObject());
+                totem.get(1).setLightObject(!totem.get(1).isLightObject());
+            }
 
             // code here
             for (Object object : objectObj) {
