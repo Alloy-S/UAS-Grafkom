@@ -15,7 +15,7 @@ import static org.lwjgl.opengl.GL11.glClearColor;
 import static org.lwjgl.opengl.GL20.*;
 
 public class Main {
-    private Window window = new Window(1080, 1080, "Hello World");
+    private Window window = new Window(1920, 1080, "Hello World");
     ArrayList<Object> objectObj = new ArrayList<>();
     ArrayList<Object> character = new ArrayList<>();
     ArrayList<Object> character2 = new ArrayList<>();
